@@ -11,4 +11,4 @@ Proyecto completo:
 Parte individual:
 - iona-s2-us12us13 : implementaciones individuales sprint 2
 - iona-s3-us10 : implementaciones individuales sprint 3 - galeria de producto
-- iona-s3-us03 : implementaciones individuales sprint 3 - thema modo oscuro
+- iona-s3-us03 : implementaciones individuales sprint 3 - aplicación de modo oscuro
