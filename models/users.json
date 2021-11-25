@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nombreUsuario": "tomito",
+    "emailUsuario": "tomito@gmail.com",
+    "contraseñaUsuario": "$2a$10$MQVGJ6RHiWJJAJf36GIkMu04rpbm2QqbnrIIbNRcBOSX2xYv7E4FO",
+    "cart": [
+      {
+        "id": "6191cb73c654f145d4326b87",
+        "cantidad": 1
+      },
+      {
+        "id": "6191cb73c654f145d4326b87",
+        "cantidad": 1
+      }
+    ]
+  }
+]

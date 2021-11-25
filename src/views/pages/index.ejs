@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+
+  <body>
+    <main>
+      <%- include('../partials/header') %> <%- include("../partials/navcat") %>
+
+      <div class="cont-product-heroes">
+        <div class="products-heroes">
+          <div class="products-heroes-bg"></div>
+          <div class="icon-brand">
+            <img src="/imgs/disneybrand.png" alt="" />
+          </div>
+          <div class="textos-brand">
+            <span>50% OFF en Combo Plus</span>
+            <p>
+              Con tu Tarjeta Santander y <br />
+              40.000 puntos SuperClub.
+            </p>
+          </div>
+        </div>
+        <div class="products-heroes">
+          <div class="icon-brand">
+            <img src="/imgs/hbobrand.png" alt="" />
+          </div>
+          <div class="textos-brand">
+            <span>50% OFF en HBO Max</span>
+            <p>
+              Con tu Tarjeta Santander y <br />
+              50.000 puntos SuperClub.
+            </p>
+          </div>
+          <div class="products-heroes-bg"></div>
+        </div>
+      </div>
+
+      <%- include("../partials/tepuedeinteresar") %>
+
+      <div class="maspedidos cont-products-items">
+        <h3>Más pedidos</h3>
+        <div>
+          <% products2.forEach((product, i) => { %>
+            <% if (i < 10) { %>
+                <%- include("../partials/product-item", {product})%>
+            <% } %>
+          <% }) %>
+          
+        </div>
+      </div>
+
+      <%- include("../partials/navcat") %>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>
