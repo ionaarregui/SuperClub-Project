@@ -1,11 +1,12 @@
 import './App.css';
+import MainArea from './Components/MainArea/MainArea';
+import Sidebar from './Components/Sidebar/Sidebar'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hola Mundo</h1>
-      </header>
+      <Sidebar />
+      <MainArea />
     </div>
   );
 }
