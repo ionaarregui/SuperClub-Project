@@ -1,7 +1,20 @@
-.header {
+header {
   position: fixed;
   top: 0;
   height: 72px;
-  width: 100%;
-  background-color: red;
+  width: calc(100vw - 296px);
+  background-color: #222222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999999;
+}
+
+header > * {
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  color: white;
 }
