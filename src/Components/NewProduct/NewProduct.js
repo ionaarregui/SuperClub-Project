@@ -1,5 +1,4 @@
-import PreviewImagenes from "./PreviewImagenes"
-import './NewProduct.css'
+import PreviewImagenes from "./PreviewImagenes/PreviewImagenes"
 import Button from "../Button/Button"
 
 const submitProducto = () => {
