@@ -1,9 +1,10 @@
 .navbar {
-    width: 296px;
+  width: 296px;
+  background-color: orange;
 }
 
 @media (max-width: 1024px) {
-    .navbar {
-        display: hidden
-    }
+  .navbar {
+    display: hidden;
+  }
 }

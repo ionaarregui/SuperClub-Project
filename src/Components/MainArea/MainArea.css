@@ -1,9 +1,10 @@
 .mainarea {
-    width: calc(100vw - 296px);
+  width: calc(100vw - 296px);
+  background-color: cyan;
 }
 
 @media (max-width: 1024) {
-    .mainarea {
-        width: 100vw;
-    }
+  .mainarea {
+    width: 100vw;
+  }
 }
