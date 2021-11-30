@@ -1,0 +1,9 @@
+.mainarea {
+    width: calc(100vw - 296px);
+}
+
+@media (max-width: 1024) {
+    .mainarea {
+        width: 100vw;
+    }
+}

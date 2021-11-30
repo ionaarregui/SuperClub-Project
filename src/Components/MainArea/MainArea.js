@@ -8,7 +8,7 @@ import StoresView from "../../Pages/Stores/StoresView/StoresView";
 
 export default function MainArea() {
     return (
-        <main>
+        <main className="mainarea">
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/products" element={<ProductsList />} />

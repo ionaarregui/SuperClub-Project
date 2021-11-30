@@ -1,0 +1,9 @@
+.navbar {
+    width: 296px;
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        display: hidden
+    }
+}
