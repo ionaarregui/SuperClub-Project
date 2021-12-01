@@ -1,14 +1,15 @@
 import './Sidebar.css'
-import homeIcon from '../../Assets/home.svg'
-import packageIcon from '../../Assets/package-variant-closed.svg'
-import storeIcon from '../../Assets/store.svg'
 import profileIcon from '../../Assets/perfil.png'
 import santanderLogo from '../../Assets/santanderLogo.svg'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
-const Sidebar = () => {
+const Sidebar = ({showMenu}) => {
+
+  let showingMenu = showMenu?'abiertoMenu': '';
+
   return (
-    <nav className="navbar">
+    <nav className={'navbar ' + showingMenu}>
       <div>
         <div className="logoSant">
           <img src={santanderLogo} alt="Logo de Santander" />
@@ -69,6 +70,12 @@ const Sidebar = () => {
           <img src={profileIcon} alt="Imagen de perfil" />
           Olivia
         </Link>
+        <div className="changeMode">
+          <div id="botonSwitch" className="botonSwitch">
+            <div id="opcionSwitch" className="opcionSwitch"></div>
+          </div>
+          Cambiar modo
+        </div>
       </div>
     </nav>
   )
