@@ -12,7 +12,6 @@ input[type='number'] {
 /* CLASES GLOBALES DESDE NEW PRODUCT */
 .form-container {
   padding: 20px;
-  background-color: #eee;
 }
 .form-container h3 {
   margin: 15px 0px;
@@ -28,7 +27,7 @@ input[type='number'] {
 .form-container textarea,
 .form-container select {
   border-radius: 14px;
-  border: 2px solid lightgrey;
+  border: 1px solid lightgrey;
   padding: 4px 8px;
 }
 .form-container input {
@@ -49,8 +48,7 @@ input[type='number'] {
   width: 90px;
   padding: 0px 8px;
   border-radius: 14px;
-  border: 2px solid lightgrey;
-  background-color: #eee;
+  border: 1px solid lightgrey;
   transition: all 250ms;
   cursor: pointer;
   font-size: 13px;

@@ -1,7 +1,6 @@
 /* ELEMENTOS DE LA MINI GALERIA DE IMAGENES */
 .div-img-cargada {
   display: flex;
-  background-color: #ccc;
   padding: 8px;
   border-radius: 16px;
   margin-bottom: 8px;

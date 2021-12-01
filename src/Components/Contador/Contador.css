@@ -15,7 +15,7 @@ input[type='number'] {
   width: 90px;
   padding: 0px 8px;
   border-radius: 14px;
-  border: 2px solid lightgrey;
+  border: 1px solid lightgrey;
   transition: all 250ms;
   cursor: pointer;
   font-size: 13px;
