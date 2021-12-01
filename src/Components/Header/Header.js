@@ -6,6 +6,7 @@ import MenuButton from '../MenuButton/MenuButton'
 import SearchButton from '../SearchButton/SearchButton'
 import Arrow from '../Arrow/Arrow'
 import { deleteProduct } from '../../Utils/ProductUtils'
+import { Link } from 'react-router-dom'
 
 const Header = ({ handlerShowMenu, searchContext }) => {
   let title
@@ -30,7 +31,9 @@ const Header = ({ handlerShowMenu, searchContext }) => {
             <input type="text" placeholder="Buscar productos" ref={searchInput} onKeyUp={handleSearch} />
             <SearchButton />
           </form>
-          <Button text="Agregar producto" />
+          <Link to="/products/new">
+            <Button text="Agregar Producto" />
+          </Link>
         </>
       )
     } else if (sectionMatch.params.section === 'stores') {
@@ -41,7 +44,9 @@ const Header = ({ handlerShowMenu, searchContext }) => {
             <input type="text" placeholder="Buscar tiendas" ref={searchInput} onKeyUp={handleSearch} />
             <SearchButton />
           </form>
-          <Button text="Agregar tienda" />
+          <Link to="/stores/new">
+            <Button text="Agregar tienda" />
+          </Link>
         </>
       )
     }
