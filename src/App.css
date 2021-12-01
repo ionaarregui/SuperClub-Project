@@ -10,35 +10,31 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-
-
-
-
 /* CLASES GLOBALES DESDE NEW PRODUCT */
-.new-product-form-container{
+.form-container {
   padding: 20px;
   background-color: #eee;
 }
-.new-product-form-container h3 {
-  margin: 15px 0px
+.form-container h3 {
+  margin: 15px 0px;
 }
 /* ELEMENTOS DE LOS FORMS */
-.new-product-form-container p {
+.form-container p {
   font-size: 14px;
   position: relative;
-  top: 16px
+  top: 16px;
 }
-.new-product-form-container input,
-.new-product-form-container textarea,
-.new-product-form-container select {
+.form-container input,
+.form-container textarea,
+.form-container select {
   border-radius: 14px;
   border: 2px solid lightgrey;
   padding: 4px 8px;
 }
-.new-product-form-container input {
+.form-container input {
   width: 240px;
 }
-.new-product-form-container textarea {
+.form-container textarea {
   width: 540px;
   height: 120px;
   padding: 8px 12px;
