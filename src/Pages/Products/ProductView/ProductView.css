@@ -2,6 +2,9 @@
   display: flex;
   width: 90%;
   padding: 20px;
+  margin: 25px 0;
+  color: #ffff;
+  align-items: center;
 }
 
 .product h3 {
@@ -88,7 +91,6 @@
   position: relative;
   padding: 10px;
   margin: 15px 0;
-  background-color: #ccc;
   border-radius: 16px;
   font-size: 12px;
 }
