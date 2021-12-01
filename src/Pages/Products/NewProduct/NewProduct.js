@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 import PreviewImagenes from '../../../Components/PreviewImagenes/PreviewImagenes'
 import { postProduct } from '../../../Utils/ProductUtils'
-import PreviewImagenes from '../../../Components/PreviewImagenes/PreviewImagenes'
 import Button from '../../../Components/Button/Button'
 import Contador from '../../../Components/Contador/Contador'
 
