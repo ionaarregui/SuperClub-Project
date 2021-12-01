@@ -37,28 +37,3 @@ body {
 .colorBuscadores {
   background-color: #333333;
 }
-
-/* ELEMENTOS DE LA MINI GALERIA DE IMAGENES */
-.div-img-cargada {
-  display: flex;
-  background-color: #ccc;
-  padding: 8px;
-  border-radius: 16px;
-  margin-bottom: 8px;
-  width: 540px;
-}
-.div-img-picture {
-  height: 42px;
-  border-radius: 10px;
-}
-.div-img-url {
-  position: relative;
-  font-size: 13px;
-  top: 13px;
-  left: 10px;
-}
-.div-img-quitar {
-  position: relative;
-  top: 6px;
-  right: -210px;
-}
