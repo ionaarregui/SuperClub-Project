@@ -1,4 +1,5 @@
 .content {
   width: 100%;
-  background-color: lime;
+  height: 100%;
+  overflow-y: scroll;
 }

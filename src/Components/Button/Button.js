@@ -10,7 +10,8 @@ import "./Button.css";
 const Button = ({ 
     callback = () => console.log("Callback del <Button/> vacío (agregar con <Button callback={()=>etc}/>)"), 
     text, 
-    type = "submit" }) => {
+    type = "submit" }
+) => {
     return (
         <div>
             <button className="btn" type={ type } onClick={ callback }>{ text }</button>

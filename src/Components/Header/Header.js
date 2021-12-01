@@ -7,7 +7,7 @@ import SearchButton from '../SearchButton/SearchButton'
 import Arrow from '../Arrow/Arrow'
 import { deleteProduct } from '../../Utils/ProductUtils'
 
-const Header = ({ handler, searchContext }) => {
+const Header = ({ handlerShowMenu, searchContext }) => {
   let title
   let contentRight
   const sectionMatch = useMatch('/:section')
@@ -69,7 +69,9 @@ const Header = ({ handler, searchContext }) => {
   return (
     <header>
       <div class="header-left">
-        <MenuButton />
+        <div onClick={() => handlerShowMenu(true)}>
+          <MenuButton />
+        </div>
         <h2 className="header-title">{title}</h2>
       </div>
       <div class="header-right">{contentRight}</div>
