@@ -14,7 +14,7 @@ const Button = ({
 }) => {
   return (
     <div>
-      <button className="btn" type={type} onClick={callback}>
+      <button className="btn colorBotonesUsuario" type={type} onClick={callback}>
         {text}
       </button>
     </div>

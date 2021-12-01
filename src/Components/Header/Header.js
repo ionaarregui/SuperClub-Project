@@ -28,7 +28,7 @@ const Header = ({ handlerShowMenu, searchContext }) => {
       contentRight = (
         <>
           <form className="header-form" action="" onSubmit={(e) => e.preventDefault()}>
-            <input type="text" placeholder="Buscar productos" ref={searchInput} onKeyUp={handleSearch} />
+            <input className="colorBuscadores" type="text" placeholder="Buscar productos" ref={searchInput} onKeyUp={handleSearch} />
             <SearchButton />
           </form>
           <Link to="/products/new">
@@ -103,7 +103,7 @@ const Header = ({ handlerShowMenu, searchContext }) => {
   }
 
   return (
-    <header>
+    <header className="colorPrincipal">
       <div className="header-left">
         <div onClick={() => handlerShowMenu(true)}>
           <MenuButton />

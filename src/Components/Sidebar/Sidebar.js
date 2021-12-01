@@ -64,7 +64,7 @@ const Sidebar = ({ showMenu }) => {
           </Link>
         </ul>
       </div>
-      <div className="linkProfile">
+      <div className="linkProfile colorBotonesUsuario">
         <Link to="/profile">
           <img src={profileIcon} alt="Imagen de perfil" />
           Olivia

@@ -42,20 +42,28 @@ const NewProduct = () => {
 
   return (
     <>
-      <div className="form-container">
+      <div className="form-container colorPrincipal">
         <form method="POST" action="/products" onSubmit={submitProducto}>
           <h3>Información</h3>
           <p>Nombre</p>
           <br />
-          <input ref={title} id="title" name="title" type="text" placeholder="Nombre del producto" required></input>
+          <input className="colorBuscadores" ref={title} id="title" name="title" type="text" placeholder="Nombre del producto" required></input>
           <br />
           <p>Categoría</p>
           <br />
-          <input ref={category} id="category" name="category" type="text" placeholder="Categoría del producto" required></input>
+          <input
+            className="colorBuscadores"
+            ref={category}
+            id="category"
+            name="category"
+            type="text"
+            placeholder="Categoría del producto"
+            required
+          ></input>
           <br />
           <p>Valor</p>
           <br />
-          <input ref={price} id="price" name="price" type="number" placeholder="Precio del producto" required></input>
+          <input className="colorBuscadores" ref={price} id="price" name="price" type="number" placeholder="Precio del producto" required></input>
           <br />
           <p>Stock</p>
           <br />
@@ -73,6 +81,7 @@ const NewProduct = () => {
           <p>Descripción</p>
           <br />
           <textarea
+            className="colorBuscadores"
             ref={description}
             id="description"
             name="description"
@@ -83,7 +92,7 @@ const NewProduct = () => {
           <br />
           <p>Tienda</p>
           <br />
-          <select ref={store} id="store" name="store" defaultValue="0" type="number" required>
+          <select className="colorBuscadores" ref={store} id="store" name="store" defaultValue="0" type="number" required>
             <option value="0" disabled>
               -- Seleccione una tienda --
             </option>
@@ -95,7 +104,7 @@ const NewProduct = () => {
           <h3>Galería de imágenes</h3>
           <p>Nueva imagen</p>
           <br />
-          <input ref={image} id="image" name="image" type="text" placeholder="Ingrese URL de la imagen"></input>
+          <input className="colorBuscadores" ref={image} id="image" name="image" type="text" placeholder="Ingrese URL de la imagen"></input>
           <br />
           <br />
           <PreviewImagenes />
