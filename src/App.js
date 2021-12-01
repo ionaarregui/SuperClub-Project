@@ -7,12 +7,10 @@ function App() {
 
   const [value, setValue] = useState(false)
 
-  let showMenu = React.createContext({value, setValue})
-
   return (
       <div className="App">
-        <Sidebar showMenu={showMenu} />
-        <MainArea showMenu={showMenu } />
+        <Sidebar showMenu={value} />
+        <MainArea handlerShowMenu={setValue} showMenu={value} />
       </div>
 
   )

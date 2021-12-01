@@ -15,8 +15,6 @@
 }
 
 .navbar a {
-  display: flex;
-  align-items: center;
   color: white;
   text-decoration: none;
 }
@@ -27,13 +25,16 @@
 }
 
 .options {
+  display: flex;
+  align-items: center;
+  width: 100%;
   padding: 5px;
   padding-left: 10px;
-  margin-bottom: 5px;
   border-radius: 10px;
+  transition: 0.3s background-color;
 }
 
-.options:hover, .linkProfile {
+a:focus .options, .linkProfile {
   background-color: rgb(245, 245, 245, 0.3);
   backdrop-filter: blur(2px);
 }
@@ -47,6 +48,12 @@
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
+}
+
+.linkProfile a {
+  margin-right: 35px;
+  display: flex;
+  align-items: center;
 }
 
 .linkProfile img {
@@ -100,5 +107,14 @@
     transform: translateX(-100vw);
     position: absolute;
     background-color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar {
+    width: 246px;
+  }
+  .linkProfile {
+    font-size: 11px;
   }
 }
