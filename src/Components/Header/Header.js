@@ -85,7 +85,7 @@ const Header = ({ handlerShowMenu, searchContext, history }) => {
               <Button text="Eliminar" callback={handleDelete} />
             </div>
             <div className="header-btn-mobile">
-              <Button text="-" />
+              <Button text="-" callback={handleDelete} />
             </div>
           </>
         )
