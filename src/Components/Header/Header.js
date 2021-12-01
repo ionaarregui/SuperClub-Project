@@ -3,17 +3,19 @@ import { ReactComponent as Search } from '../../Assets/magnify.svg'
 import { useMatch } from 'react-router'
 import './Header.css'
 import Button from '../Button/Button'
+import { useContext } from 'react'
 
-const Header = ({ handler }) => {
+const Header = ({ showMenu }) => {
   let content
   const sectionMatch = useMatch('/:section')
   const idMatch = useMatch('/:section/:id')
+  let {value, setValue} = useContext(showMenu)
 
   if (!sectionMatch && !idMatch) {
     content = (
       <>
         <div>
-          <div onClick={handler}>
+          <div onClick={()=>setValue(!value)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"

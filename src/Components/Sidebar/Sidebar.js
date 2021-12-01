@@ -2,11 +2,11 @@ import './Sidebar.css'
 import profileIcon from '../../Assets/perfil.png'
 import santanderLogo from '../../Assets/santanderLogo.svg'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useContext } from 'react'
 
-const Sidebar = ({showMenu}) => {
-
-  let showingMenu = showMenu?'abiertoMenu': '';
+const Sidebar = ({ showMenu }) => {
+  let { value} = useContext(showMenu);
+  let showingMenu = value ? 'abiertoMenu' : '';
 
   return (
     <nav className={'navbar ' + showingMenu}>

@@ -1,19 +1,20 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import MainArea from './Components/MainArea/MainArea'
 import Sidebar from './Components/Sidebar/Sidebar'
 
 function App() {
-  const [showMenu, setShowMenu] = useState(false)
-  const handlerShowMenu = () => {
-    setShowMenu(!showMenu)
-  }
+
+  const [value, setValue] = useState(false)
+
+  let showMenu = React.createContext({value, setValue})
 
   return (
-    <div className="App">
-      <Sidebar showMenu={showMenu} />
-      <MainArea handler={handlerShowMenu} />
-    </div>
+      <div className="App">
+        <Sidebar showMenu={showMenu} />
+        <MainArea showMenu={showMenu } />
+      </div>
+
   )
 }
 

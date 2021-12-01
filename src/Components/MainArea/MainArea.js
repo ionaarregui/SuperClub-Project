@@ -2,10 +2,10 @@ import Content from '../Content/Content'
 import Header from '../Header/Header'
 import './MainArea.css'
 
-export default function MainArea({ handler }) {
+export default function MainArea({ showMenu }) {
   return (
     <main className="mainarea">
-      <Header handler={handler} />
+      <Header showMenu={showMenu} />
       <Content />
     </main>
   )
