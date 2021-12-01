@@ -21,6 +21,11 @@ header > * {
   color: white;
 }
 
+.header-title a {
+  text-decoration: none;
+  color: white;
+}
+
 .header-form {
   background-color: #222;
 }

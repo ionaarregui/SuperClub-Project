@@ -52,22 +52,38 @@ const Header = ({ handlerShowMenu, searchContext }) => {
     }
   } else if (!sectionMatch) {
     if (idMatch.params.section === 'products') {
-      title = (
-        <>
-          Productos <Arrow /> #{idMatch.params.id}
-        </>
-      )
-      contentRight = (
-        <>
-          <Button text="Eliminar" callback={() => deleteProduct(idMatch.params.id)} />
-        </>
-      )
+      if (idMatch.params.id === 'new') {
+        title = (
+          <>
+            <Link to="/products">Productos</Link> <Arrow /> Nuevo Producto
+          </>
+        )
+      } else {
+        title = (
+          <>
+            <Link to="/products">Productos</Link> <Arrow /> #{idMatch.params.id}
+          </>
+        )
+        contentRight = (
+          <>
+            <Button text="Eliminar" callback={() => deleteProduct(idMatch.params.id)} />
+          </>
+        )
+      }
     } else if (idMatch.params.section === 'stores') {
-      title = (
-        <>
-          Tiendas <Arrow /> #{idMatch.params.id}
-        </>
-      )
+      if (idMatch.params.id === 'new') {
+        title = (
+          <>
+            <Link to="/stores">Tiendas</Link> <Arrow /> Nueva Tienda
+          </>
+        )
+      } else {
+        title = (
+          <>
+            <Link to="/stores">Tiendas</Link> <Arrow /> #{idMatch.params.id}
+          </>
+        )
+      }
     }
   }
 
