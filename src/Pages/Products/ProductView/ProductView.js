@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { useParams } from 'react-router'
 import Button from '../../../Components/Button/Button'
-import { getProduct, postProduct } from '../../../Utils/ProductUtils'
+import { getProduct, putProduct } from '../../../Utils/ProductUtils'
 import { getStoresList } from '../../../Utils/StoreUtils'
 import './ProductView.css'
 import notImage from '../../../Assets/image-not-found.png'
@@ -57,18 +57,29 @@ const ProductView = () => {
 
   const sendForm = (e) => {
     e.preventDefault()
-    console.log('envio')
+    let productoEdit = {
+      _id: product._id,
+      title: nombre.current.value,
+      price: precio.current.value,
+      stock: stock.current.value,
+      description: descripcion.current.value,
+      image: imagen.current.value,
+      category: categoria.current.value,
+      store: tienda.current.value,
+      gallery: gallery,
+      mostWanted: false,
+    }
+    putProduct(product._id, productoEdit).catch((err) => console.error('Error santanderístico al cargar el producto'))
   }
 
   const prevenirEnvio = (e) => {
     if (e.key == 'Enter') {
       e.preventDefault(e)
-      console.log('dsfsf')
     }
   }
 
   return (
-    <div className="content">
+    <>
       <div className="product">
         <div className="product-img">
           <img src={product.image ? product.image : notImage} alt={product.title} />
@@ -131,7 +142,11 @@ const ProductView = () => {
           <div className="input-group">
             <label htmlFor="tienda">Tienda</label>
             <br />
+
             <select ref={tienda} id="tienda">
+              <option value="0" disabled>
+                -- Seleccione una tienda --
+              </option>
               {stores &&
                 stores.map((t) => (
                   <option value={t._id} key={t._id}>
@@ -169,12 +184,12 @@ const ProductView = () => {
               })}
           </div>
           <div className="actions">
-            <Button type="button" text="Cancelar" />
-            <Button text="Guardar" />
+            <Button type="button" text="Cancelar" callback={() => {}} />
+            <Button text="Guardar" callback={() => {}} />
           </div>
         </form>
       </div>
-    </div>
+    </>
   )
 }
 
