@@ -1,0 +1,68 @@
+.home {
+  padding: 0 10px;
+  padding-top: 20px;
+  color: white;
+}
+
+.blockInformation {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: rgb(245, 245, 245, 0.05);
+}
+
+.blockInformation:first-child {
+  margin-bottom: 10px;
+}
+
+.blockInformation > div {
+  display: flex;
+  align-items: center;
+}
+
+.home svg {
+  width: 40px;
+  height: 40px;
+}
+
+.home a {
+  color: white;
+  text-decoration: none;
+}
+
+.home h3 {
+  font-weight: normal;
+}
+
+.home span {
+  font-weight: bold;
+}
+
+.blockButton {
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: rgb(245, 245, 245, 0.15);
+}
+
+.blockButton:first-child {
+  margin-right: 10px;
+}
+
+.blockButton:last-child {
+  min-width: 150px;
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 0.5rem;
+  }
+  .blockButton:last-child {
+    min-width: 85px;
+  }
+  .home svg {
+    width: 20px;
+    height: 20px;
+  }
+}
