@@ -47,13 +47,8 @@
   transition: 0.3s width;
 }
 
-.optionsLink:hover .options::after {
+.optionsLink:focus .options::after {
   width: 100%;
-}
-
-a:focus .options {
-  background-color: rgb(245, 245, 245, 0.3);
-  backdrop-filter: blur(2px);
 }
 
 .linkProfile {
