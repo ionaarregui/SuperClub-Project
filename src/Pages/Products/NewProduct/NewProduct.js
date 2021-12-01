@@ -2,7 +2,6 @@ import { useRef, useState, useEffect } from 'react'
 import PreviewImagenes from '../../../Components/PreviewImagenes/PreviewImagenes'
 import { postProduct } from '../../../Utils/ProductUtils'
 import Button from '../../../Components/Button/Button'
-import Contador from '../../../Components/Contador/Contador'
 import { getStoresList } from '../../../Utils/StoreUtils'
 import './NewProduct.css'
 
