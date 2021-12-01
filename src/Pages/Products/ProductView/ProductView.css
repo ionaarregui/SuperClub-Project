@@ -112,4 +112,5 @@ h3 {
 .actions {
   display: flex;
   justify-content: end;
+  gap: 15px;
 }

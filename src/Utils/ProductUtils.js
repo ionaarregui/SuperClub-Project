@@ -1,4 +1,4 @@
-const baseUrl = 'https://dhfakestore1.herokuapp.com/api/products'
+const baseUrl = 'http://dhfakestore1.herokuapp.com/api/products'
 
 export const getProductsList = async () => {
   const res = await fetch(`${baseUrl}`)
@@ -17,7 +17,7 @@ export const postProduct = async (
   price,
   description = null,
   image = null,
-  gallery = null,
+  gallery = [],
   category = null,
   mostWanted = false,
   store = null
