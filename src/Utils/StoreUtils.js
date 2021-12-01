@@ -35,7 +35,6 @@ export const postStore = async (
 }
 
 export const putStore = async (id, store) => {
-  console.log(store)
   let body = JSON.stringify(store)
   const res = await fetch(`${baseUrl}/${id}`, {
     method: 'PUT',
