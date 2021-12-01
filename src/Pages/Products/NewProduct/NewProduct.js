@@ -39,7 +39,7 @@ const NewProduct = () => {
   }
 
   const handleResta = () => {
-    contador--
+    if (contador > 0) contador--
     setContador(contador)
   }
   const handleSuma = () => {
