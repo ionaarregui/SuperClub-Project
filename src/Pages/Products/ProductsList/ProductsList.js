@@ -1,17 +1,22 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { getProductsList } from '../../../Utils/ProductUtils'
+import Timer from '../../../Utils/Timer';
 import './ProductsList.css';
 
 const ProductsList = () => {
   const [products, setProducts] = useState([])
 
+  const [loading, setLoading] = useState(false)
+
   useEffect(() => {
-    getProductsList().then((data) => setProducts(data))
+    setLoading(true);
+    getProductsList().then((data) => {setProducts(data);
+    setLoading(false)})
   }, [])
 
   return (
-      <>
+      <Timer loading={loading}>
     <ul className="divMain">
       {products.map((prod, i, i2, i3, i4, i5, i6, i7) => {
         return <li key={i} className="productos">
@@ -26,7 +31,7 @@ const ProductsList = () => {
         </li>
       })}
     </ul>
-    </>
+    </Timer>
   )
 }
 

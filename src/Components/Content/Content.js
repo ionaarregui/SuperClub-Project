@@ -5,7 +5,6 @@ import ProductsList from '../../Pages/Products/ProductsList/ProductsList'
 import ProductView from '../../Pages/Products/ProductView/ProductView'
 import StoresList from '../../Pages/Stores/StoresList/StoresList'
 import StoresView from '../../Pages/Stores/StoresView/StoresView'
-import Timer from '../../Utils/Timer'
 import './Content.css'
 
 const Content = () => {
@@ -13,10 +12,10 @@ const Content = () => {
     <div className="content">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Timer><ProductsList /></Timer>} />
+        <Route path="/products" element={<ProductsList />} />
         {/* <Route path="/products/new" element={<UnaWea />} /> */}
         <Route path="/products/:id" element={<ProductView />} />
-        <Route path="/stores" element={<Timer><StoresList /></Timer>} />
+        <Route path="/stores" element={<StoresList />} />
         {/* <Route path="/stores/new" element={<OtraWea />} /> */}
         <Route path="/stores/:id" element={<StoresView />} />
         <Route path="/profile" element={<NotFound />} />
