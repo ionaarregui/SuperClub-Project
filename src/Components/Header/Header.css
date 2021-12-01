@@ -37,6 +37,7 @@ header > * {
   width: 240px;
   background-color: #222;
   color: #aaa;
+  outline-style: none;
 }
 
 .header-form input::placeholder {
@@ -56,8 +57,42 @@ header > * {
   gap: 10px;
 }
 
+.add-element-mobile {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   header {
     width: 100vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-form input {
+    width: 42px;
+  }
+
+  .header-form input::placeholder {
+    color: transparent;
+  }
+
+  .add-element-desktop {
+    display: none;
+  }
+
+  .add-element-mobile {
+    display: flex;
+    align-items: top;
+  }
+
+  .add-element-mobile div {
+    height: 20px;
+  }
+
+  .add-element-mobile button {
+    font-weight: bold;
+    font-size: 28px;
+    border-radius: 50px;
+    padding: 0px 2px;
   }
 }

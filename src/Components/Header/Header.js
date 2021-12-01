@@ -32,7 +32,12 @@ const Header = ({ handlerShowMenu, searchContext }) => {
             <SearchButton />
           </form>
           <Link to="/products/new">
-            <Button text="Agregar Producto" />
+            <div className="add-element-desktop">
+              <Button text="Agregar Producto" />
+            </div>
+            <div className="add-element-mobile">
+              <Button text="+" />
+            </div>
           </Link>
         </>
       )
@@ -45,7 +50,12 @@ const Header = ({ handlerShowMenu, searchContext }) => {
             <SearchButton />
           </form>
           <Link to="/stores/new">
-            <Button text="Agregar tienda" />
+            <div className="add-element-desktop">
+              <Button text="Agregar tienda" />
+            </div>
+            <div className="add-element-mobile">
+              <Button text="+" />
+            </div>
           </Link>
         </>
       )
@@ -89,13 +99,13 @@ const Header = ({ handlerShowMenu, searchContext }) => {
 
   return (
     <header>
-      <div class="header-left">
+      <div className="header-left">
         <div onClick={() => handlerShowMenu(true)}>
           <MenuButton />
         </div>
         <h2 className="header-title">{title}</h2>
       </div>
-      <div class="header-right">{contentRight}</div>
+      <div className="header-right">{contentRight}</div>
     </header>
   )
 }
