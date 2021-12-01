@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { getProductsList } from '../../../Utils/ProductUtils'
 import Timer from '../../../Utils/Timer'
 import './ProductsList.css'
+import Arrow from '../../../Components/Arrow/Arrow'
 
 const ProductsList = ({ searchContext }) => {
   const [products, setProducts] = useState([])
@@ -25,7 +26,7 @@ const ProductsList = ({ searchContext }) => {
 
   return (
     <Timer loading={loading}>
-      <ul className="divMain">
+      <ul className="uls colorPrincipal">
         {products
           .filter((prod) => prod.title.toLowerCase().includes(search.toLowerCase()))
           .map((prod, i, i2, i3, i4, i5, i6, i7) => {
@@ -37,7 +38,7 @@ const ProductsList = ({ searchContext }) => {
                   <h4 key={i5}>#{prod._id}</h4>
                 </div>
                 <Link key={i6} to={`/products/${prod._id}`} className="flechita">
-                  <img key={i7} src="flechita.svg" alt="Foto flechita"></img>
+                  <Arrow></Arrow>
                 </Link>
               </li>
             )
