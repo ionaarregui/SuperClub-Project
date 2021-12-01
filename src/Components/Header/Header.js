@@ -5,6 +5,7 @@ import { useContext, useRef } from 'react'
 import MenuButton from '../MenuButton/MenuButton'
 import SearchButton from '../SearchButton/SearchButton'
 import Arrow from '../Arrow/Arrow'
+import { deleteProduct } from '../../Utils/ProductUtils'
 
 const Header = ({ handler, searchContext }) => {
   let title
@@ -53,7 +54,7 @@ const Header = ({ handler, searchContext }) => {
       )
       contentRight = (
         <>
-          <Button text="Eliminar" />
+          <Button text="Eliminar" callback={() => deleteProduct(idMatch.params.id)} />
         </>
       )
     } else if (idMatch.params.section === 'stores') {
@@ -65,17 +66,15 @@ const Header = ({ handler, searchContext }) => {
     }
   }
 
-  let content = (
-    <>
+  return (
+    <header>
       <div class="header-left">
         <MenuButton />
         <h2 className="header-title">{title}</h2>
       </div>
       <div class="header-right">{contentRight}</div>
-    </>
+    </header>
   )
-
-  return <header>{content}</header>
 }
 
 export default Header
