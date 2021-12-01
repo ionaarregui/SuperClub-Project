@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import './Home.css'
 
 const Home = () => {
-
   let agregarProducto = useRef(null)
   let agregarTienda = useRef(null)
 
@@ -12,8 +11,8 @@ const Home = () => {
   }
 
   return (
-    <div className="home">
-      <div className="blockInformation">
+    <div className="home colorPrincipal">
+      <div className="blockInformation colorItems">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +38,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="blockInformation">
+      <div className="blockInformation colorItems">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
