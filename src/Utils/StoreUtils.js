@@ -33,8 +33,6 @@ export const postStore = async (
   const response = await res.json()
   return response
 }
-<<<<<<< HEAD
-=======
 
 export const putStore = async (
   id,
@@ -58,4 +56,3 @@ export const putStore = async (
   const response = await res.json()
   return response
 }
->>>>>>> dev
