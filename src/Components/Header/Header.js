@@ -32,10 +32,10 @@ const Header = ({ handlerShowMenu, searchContext }) => {
             <SearchButton />
           </form>
           <Link to="/products/new">
-            <div className="add-element-desktop">
+            <div className="header-btn-desktop">
               <Button text="Agregar Producto" />
             </div>
-            <div className="add-element-mobile">
+            <div className="header-btn-mobile">
               <Button text="+" />
             </div>
           </Link>
@@ -50,10 +50,10 @@ const Header = ({ handlerShowMenu, searchContext }) => {
             <SearchButton />
           </form>
           <Link to="/stores/new">
-            <div className="add-element-desktop">
+            <div className="header-btn-desktop">
               <Button text="Agregar tienda" />
             </div>
-            <div className="add-element-mobile">
+            <div className="header-btn-mobile">
               <Button text="+" />
             </div>
           </Link>
@@ -76,7 +76,12 @@ const Header = ({ handlerShowMenu, searchContext }) => {
         )
         contentRight = (
           <>
-            <Button text="Eliminar" callback={() => deleteProduct(idMatch.params.id)} />
+            <div className="header-btn-desktop">
+              <Button text="Eliminar" callback={() => deleteProduct(idMatch.params.id)} />
+            </div>
+            <div className="header-btn-mobile">
+              <Button text="-" />
+            </div>
           </>
         )
       }
