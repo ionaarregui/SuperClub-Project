@@ -38,6 +38,24 @@ body {
   background-color: #333333;
 }
 
+/*MODO CLARO CLASES COLORES*/
+
+.colorPrincipalClaro {
+  background-color: white;
+}
+
+.colorItemsClaro {
+  background-color: red;
+}
+
+.colorBotonesUsuarioClaro {
+  background-color: tomato;
+}
+
+.colorBuscadoresClaro {
+  background-color: green;
+}
+
 /* CLASES GLOBALES DESDE NEW PRODUCT */
 .form-container {
   padding: 20px;
