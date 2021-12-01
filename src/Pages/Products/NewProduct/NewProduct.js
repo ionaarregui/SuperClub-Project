@@ -162,6 +162,7 @@ const NewProduct = () => {
                 )
               })}
           </div>
+          <br />
           <Button id="submitBtn" text="Guardar" callback={() => console.log('callback')} />
         </form>
       </div>
