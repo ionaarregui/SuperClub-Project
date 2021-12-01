@@ -4,6 +4,7 @@
     padding: 20px;
     flex-direction: column;
     justify-content: center;
+    color: white;
 }
 
 .imagenesTiendas {
@@ -16,17 +17,28 @@
     display: flex;
     padding: 5px;
     margin: 10px 10px 5px 10px;
-    background-color: grey;
     border-radius: 15px;
     align-items: center;
-    box-shadow: 4px 4px 4px #000000;
+    box-shadow: 0px 0px 5px 0px #000000 ;
 }
 
 .tiendas h4 {
     font-weight: normal;
 }
 
+.tiendas:first-child {
+    margin-top: 0;
+}
+.tiendas:last-child {
+    margin-bottom: 0;
+}
+
+.uls {
+    padding: 10px 0;
+}
+
 .flechita {
     margin-left: auto;
     padding-right: 15px;
+    color: white;
 }

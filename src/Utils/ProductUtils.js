@@ -1,4 +1,4 @@
-const baseUrl = 'https://dhfakestore1.herokuapp.com/api/products'
+const baseUrl = 'http://dhfakestore1.herokuapp.com/api/products'
 
 export const getProductsList = async () => {
   const res = await fetch(`${baseUrl}`)
@@ -25,29 +25,15 @@ export const postProduct = async (product) => {
   return response
 }
 
-export const putProduct = async (
-  id,
-  title,
-  price,
-  description = null,
-  image = null,
-  gallery = null,
-  category = null,
-  mostWanted = false,
-  store = null
-) => {
-  let body = JSON.stringify({
-    id,
-    title,
-    price,
-    description,
-    image,
-    gallery,
-    category,
-    mostWanted,
-    store,
+export const putProduct = async (id, product) => {
+  let body = JSON.stringify(product)
+  const res = await fetch(`${baseUrl}/${id}`, {
+    method: 'PUT',
+    body,
+    headers: {
+      'Content-Type': 'application/json',
+    },
   })
-  const res = await fetch(`${baseUrl}/${id}`, { method: 'PUT', body })
   const response = await res.json()
   return response
 }

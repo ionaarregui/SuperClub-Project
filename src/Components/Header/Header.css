@@ -21,6 +21,11 @@ header > * {
   color: white;
 }
 
+.header-title a {
+  text-decoration: none;
+  color: white;
+}
+
 .header-form {
   background-color: #222;
 }
@@ -32,6 +37,7 @@ header > * {
   width: 240px;
   background-color: #222;
   color: #aaa;
+  outline-style: none;
 }
 
 .header-form input::placeholder {
@@ -45,4 +51,44 @@ header > * {
   right: 30px;
   top: 8px;
   font-size: 10px;
+}
+
+.header-left {
+  gap: 10px;
+}
+
+.header-btn-mobile {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  header {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-form input {
+    width: 42px;
+  }
+
+  .header-form input::placeholder {
+    color: transparent;
+  }
+
+  .header-btn-desktop {
+    display: none;
+  }
+
+  .header-btn-mobile {
+    display: flex;
+    align-items: top;
+  }
+
+  .header-btn-mobile button {
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 50%;
+    padding: 0px 12px;
+  }
 }

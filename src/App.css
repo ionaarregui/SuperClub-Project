@@ -20,6 +20,24 @@ body {
   overflow-x: hidden;
 }
 
+/*MODO OSCURO (predeterminado) CLASES COLORES*/
+
+.colorItems {
+  background-color: #2b2b2b;
+}
+
+.colotBotonesUsuario {
+  background-color: #494f51;
+}
+
+.colorPrincipal {
+  background-color: #222222;
+}
+
+.colorBuscadores {
+  background-color: #333333;
+}
+
 /* CLASES GLOBALES DESDE NEW PRODUCT */
 .form-container {
   padding: 20px;
@@ -29,7 +47,8 @@ body {
   margin: 15px 0px;
 }
 /* ELEMENTOS DE LOS FORMS */
-.form-container p {
+.form-container p,
+.form-container label {
   font-size: 14px;
   position: relative;
   top: 16px;

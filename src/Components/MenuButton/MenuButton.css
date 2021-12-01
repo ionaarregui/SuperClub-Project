@@ -1,0 +1,11 @@
+.menu-button {
+  display: none;
+  fill: white;
+  stroke: white;
+}
+
+@media (max-width: 1024px) {
+  .menu-button {
+    display: block;
+  }
+}

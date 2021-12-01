@@ -1,4 +1,4 @@
-const baseUrl = 'https://dhfakestore1.herokuapp.com/api/stores'
+const baseUrl = 'http://dhfakestore1.herokuapp.com/api/stores'
 
 export const getStoresList = async () => {
   const res = await fetch(`${baseUrl}`)
