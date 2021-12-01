@@ -67,12 +67,12 @@ const NewProduct = () => {
           <br />
           <p>Stock</p>
           <br />
-          <div className="contador">
-            <button type="button" onClick={handleResta} className="operador">
+          <div className="contador colorBuscadores">
+            <button type="button" onClick={handleResta} className="operador colorBuscadores">
               -
             </button>
-            <input id="stock" value={contador} name="stock" type="number" defaultValue="1" required></input>
-            <button type="button" onClick={handleSuma} className="operador">
+            <input className="colorBuscadores" id="stock" value={contador} name="stock" type="number" defaultValue="1" required></input>
+            <button type="button" onClick={handleSuma} className="operador colorBuscadores">
               +
             </button>
           </div>

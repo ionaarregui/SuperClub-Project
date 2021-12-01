@@ -16,7 +16,6 @@ input[type='number'] {
   padding: 0px 8px;
   border-radius: 14px;
   border: 2px solid lightgrey;
-  background-color: #eee;
   transition: all 250ms;
   cursor: pointer;
   font-size: 13px;

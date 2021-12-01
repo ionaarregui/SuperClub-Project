@@ -28,6 +28,7 @@ body {
 
 .colorBotonesUsuario {
   background-color: #494f51;
+  color: white;
 }
 
 .colorPrincipal {
@@ -38,6 +39,7 @@ body {
 .colorBuscadores {
   background-color: #333333;
   color: white;
+  outline-style: none;
 }
 
 /*MODO CLARO CLASES COLORES*/
@@ -93,7 +95,6 @@ body {
 /* ELEMENTOS DE LA MINI GALERIA DE IMAGENES */
 .div-img-cargada {
   display: flex;
-  background-color: #ccc;
   padding: 8px;
   border-radius: 16px;
   margin-bottom: 8px;
