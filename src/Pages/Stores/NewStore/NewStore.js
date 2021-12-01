@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { postStore } from '../../../Utils/StoreUtils'
 import Button from '../../../Components/Button/Button'
+import './NewStore.css'
 
 const NewStore = () => {
   let name = useRef('')

@@ -1,0 +1,76 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+/* CLASES GLOBALES DESDE NEW PRODUCT */
+.form-container {
+  padding: 20px;
+  background-color: #eee;
+}
+.form-container h3 {
+  margin: 15px 0px;
+}
+/* ELEMENTOS DE LOS FORMS */
+.form-container p,
+.form-container label {
+  font-size: 14px;
+  position: relative;
+  top: 16px;
+}
+.form-container input,
+.form-container textarea,
+.form-container select {
+  border-radius: 14px;
+  border: 2px solid lightgrey;
+  padding: 4px 8px;
+}
+.form-container input {
+  width: 240px;
+}
+.form-container textarea {
+  width: 540px;
+  height: 120px;
+  padding: 8px 12px;
+}
+.p-contador {
+  width: 120px;
+}
+
+.contador {
+  display: flex;
+  justify-content: space-between;
+  width: 90px;
+  padding: 0px 8px;
+  border-radius: 14px;
+  border: 2px solid lightgrey;
+  background-color: #eee;
+  transition: all 250ms;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.contador-valor {
+  font-size: 15px;
+  position: relative;
+  top: 3px;
+}
+
+.operador {
+  font-size: 20px;
+  font-weight: bold;
+  border: 0px;
+  cursor: pointer;
+}
+
+#stock {
+  width: 45px;
+  border: 0px;
+  text-align: center;
+}
