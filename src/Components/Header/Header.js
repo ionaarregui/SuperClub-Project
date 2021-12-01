@@ -1,4 +1,4 @@
-import { useMatch } from 'react-router'
+import { useMatch, useNavigate } from 'react-router'
 import './Header.css'
 import Button from '../Button/Button'
 import { useContext, useRef } from 'react'
@@ -8,16 +8,21 @@ import Arrow from '../Arrow/Arrow'
 import { deleteProduct } from '../../Utils/ProductUtils'
 import { Link } from 'react-router-dom'
 
-const Header = ({ handlerShowMenu, searchContext }) => {
+const Header = ({ handlerShowMenu, searchContext, history }) => {
   let title
   let contentRight
   const sectionMatch = useMatch('/:section')
   const idMatch = useMatch('/:section/:id')
+  const navigate = useNavigate()
   const searchInput = useRef('')
   let { setSearch } = useContext(searchContext)
 
   const handleSearch = () => {
     setSearch(searchInput.current.value)
+  }
+
+  const handleDelete = () => {
+    deleteProduct(idMatch.params.id).then(navigate('/products'))
   }
 
   if (!sectionMatch && !idMatch) {
@@ -77,7 +82,7 @@ const Header = ({ handlerShowMenu, searchContext }) => {
         contentRight = (
           <>
             <div className="header-btn-desktop">
-              <Button text="Eliminar" callback={() => deleteProduct(idMatch.params.id)} />
+              <Button text="Eliminar" callback={handleDelete} />
             </div>
             <div className="header-btn-mobile">
               <Button text="-" />
