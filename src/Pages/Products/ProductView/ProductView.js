@@ -5,6 +5,7 @@ import { getProduct, postProduct } from '../../../Utils/ProductUtils'
 import { getStoresList } from '../../../Utils/StoreUtils'
 import './ProductView.css'
 import notImage from '../../../Assets/image-not-found.png'
+import ImagenCargada from '../../../Components/PreviewImagenes/ImagenCargada'
 
 const ProductView = () => {
   const [product, setProduct] = useState([])
@@ -44,22 +45,19 @@ const ProductView = () => {
 
   const addGalleryItem = (e) => {
     e.preventDefault()
-    if (galeria.current.value != '' && e.key == 'Enter') {
+    if (galeria.current.value !== '' && e.key == 'Enter') {
       setGallery([...gallery, galeria.current.value])
       galeria.current.value = ''
     }
   }
 
   const deleteGalleryItem = (item) => {
-    console.log('-----------')
-    console.log(item)
     setGallery(gallery.filter((e) => e != item))
   }
 
   const sendForm = (e) => {
     e.preventDefault()
     console.log('envio')
-    //let res = postProduct(nombre.current.value, precio.current.value, descripcion.current.value, imagen.current.value)
   }
 
   const prevenirEnvio = (e) => {
@@ -70,7 +68,7 @@ const ProductView = () => {
   }
 
   return (
-    <div className="contenedor">
+    <div className="content">
       <div className="product">
         <div className="product-img">
           <img src={product.image ? product.image : notImage} alt={product.title} />
@@ -102,31 +100,37 @@ const ProductView = () => {
           </div>
         </div>
       </div>
-      <div className="product-data">
+      <div className="form-container">
         <h3>Información</h3>
         <form onSubmit={sendForm}>
           <div className="input-group">
             <label htmlFor="nombre">Nombre</label>
+            <br />
             <input required type="text" ref={nombre} id="nombre" />
           </div>
           <div className="input-group">
             <label htmlFor="categoria">Categoria</label>
+            <br />
             <input required type="text" ref={categoria} id="categoria" />
           </div>
           <div className="input-group">
             <label htmlFor="precio">Precio</label>
+            <br />
             <input required type="number" ref={precio} id="precio" />
           </div>
           <div className="input-group">
             <label htmlFor="stock">Stock</label>
+            <br />
             <input type="number" ref={stock} id="stock" />
           </div>
           <div className="input-group">
             <label htmlFor="descripcion">Descripcion</label>
+            <br />
             <textarea ref={descripcion} id="descripcion" cols="30" rows="10"></textarea>
           </div>
           <div className="input-group">
             <label htmlFor="tienda">Tienda</label>
+            <br />
             <select ref={tienda} id="tienda">
               {stores &&
                 stores.map((t) => (
@@ -140,12 +144,13 @@ const ProductView = () => {
           <h3>Galaría de imagenes</h3>
           <div className="input-group">
             <label htmlFor="image">Imegen principal</label>
+            <br />
             <input type="text" ref={imagen} id="image" placeholder="Url de imagen..." />
           </div>
           <div className="input-group">
             <label htmlFor="image">Nueva imagen</label>
+            <br />
             <input type="text" ref={galeria} id="image" placeholder="Url de imagen..." onKeyUp={addGalleryItem} onKeyPress={prevenirEnvio} />
-            <p>Imagenes actuales</p>
 
             {product &&
               gallery &&
