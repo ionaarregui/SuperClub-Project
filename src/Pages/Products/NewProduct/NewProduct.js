@@ -1,7 +1,7 @@
 import { useRef } from 'react'
-import PreviewImagenes from './PreviewImagenes/PreviewImagenes'
-import { postProduct } from '../../Utils/ProductUtils'
-import Button from '../Button/Button'
+import PreviewImagenes from '../../../Components/PreviewImagenes/PreviewImagenes'
+import { postProduct } from '../../../Utils/ProductUtils'
+import Button from '../../../Components/Button/Button'
 
 const NewProduct = () => {
   let title = useRef('')
@@ -24,12 +24,7 @@ const NewProduct = () => {
       gallery: '',
       mostWanted: false,
     }
-    postProduct(product)
-      .then((data) => {
-        console.log(data)
-        console.log('%cproducto agregado', 'background-color: lime;')
-      })
-      .catch((err) => console.error('Error santanderístico al cargar el producto'))
+    postProduct(product).catch((err) => console.error('Error santanderístico al cargar el producto'))
   }
 
   return (

@@ -3,10 +3,10 @@ import Home from '../../Pages/Home/Home'
 import NotFound from '../../Pages/NotFound/NotFound'
 import ProductsList from '../../Pages/Products/ProductsList/ProductsList'
 import ProductView from '../../Pages/Products/ProductView/ProductView'
-import NewProduct from '../NewProduct/NewProduct'
+import NewProduct from '../../Pages/Products/NewProduct/NewProduct'
 import StoresList from '../../Pages/Stores/StoresList/StoresList'
 import StoresView from '../../Pages/Stores/StoresView/StoresView'
-import NewStore from '../NewStore/NewStore'
+import NewStore from '../../Pages/Stores/NewStore/NewStore'
 import './Content.css'
 
 const Content = ({ searchContext }) => {
