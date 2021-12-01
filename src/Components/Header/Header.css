@@ -37,6 +37,7 @@ header > * {
   width: 240px;
   color: #aaa;
   outline-style: none;
+  padding: 4px 8px;
   transition: 0.5s width;
 }
 
@@ -70,11 +71,16 @@ header > * {
   .header-form input {
     width: 42px;
     height: 30px;
+    padding: 0;
+  }
+
+  .header-form button {
     top: 4px;
   }
 
   .header-form input:focus, .header-form button:focus ~  input{
     width: 160px;
+    padding-left: 8px;
   }
 
   .header-form input::placeholder {
