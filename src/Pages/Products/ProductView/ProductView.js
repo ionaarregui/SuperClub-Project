@@ -5,7 +5,6 @@ import { getProduct, putProduct } from '../../../Utils/ProductUtils'
 import { getStoresList } from '../../../Utils/StoreUtils'
 import './ProductView.css'
 import notImage from '../../../Assets/image-not-found.png'
-import ImagenCargada from '../../../Components/PreviewImagenes/ImagenCargada'
 
 const ProductView = () => {
   const [product, setProduct] = useState([])
@@ -80,7 +79,7 @@ const ProductView = () => {
 
   return (
     <>
-      <div className="product">
+      <div className="product colorPrincipal">
         <div className="product-img">
           <img src={product.image ? product.image : notImage} alt={product.title} />
         </div>
@@ -111,39 +110,39 @@ const ProductView = () => {
           </div>
         </div>
       </div>
-      <div className="form-container">
+      <div className="form-container colorPrincipal">
         <h3>Información</h3>
         <form onSubmit={sendForm}>
           <div className="input-group">
             <label htmlFor="nombre">Nombre</label>
             <br />
-            <input required type="text" ref={nombre} id="nombre" />
+            <input className="colorBuscadores" required type="text" ref={nombre} id="nombre" />
           </div>
           <div className="input-group">
             <label htmlFor="categoria">Categoria</label>
             <br />
-            <input required type="text" ref={categoria} id="categoria" />
+            <input className="colorBuscadores" required type="text" ref={categoria} id="categoria" />
           </div>
           <div className="input-group">
             <label htmlFor="precio">Precio</label>
             <br />
-            <input required type="number" ref={precio} id="precio" />
+            <input className="colorBuscadores" required type="number" ref={precio} id="precio" />
           </div>
           <div className="input-group">
             <label htmlFor="stock">Stock</label>
             <br />
-            <input type="number" ref={stock} id="stock" />
+            <input className="colorBuscadores" type="number" ref={stock} id="stock" />
           </div>
           <div className="input-group">
             <label htmlFor="descripcion">Descripcion</label>
             <br />
-            <textarea ref={descripcion} id="descripcion" cols="30" rows="10"></textarea>
+            <textarea className="colorBuscadores" ref={descripcion} id="descripcion" cols="30" rows="10"></textarea>
           </div>
           <div className="input-group">
             <label htmlFor="tienda">Tienda</label>
             <br />
 
-            <select ref={tienda} id="tienda">
+            <select className="colorBuscadores" ref={tienda} id="tienda">
               <option value="0" disabled>
                 -- Seleccione una tienda --
               </option>
@@ -156,22 +155,30 @@ const ProductView = () => {
             </select>
           </div>
 
-          <h3>Galaría de imagenes</h3>
+          <h3>Galería de imagenes</h3>
           <div className="input-group">
-            <label htmlFor="image">Imegen principal</label>
+            <label htmlFor="image">Imagen principal</label>
             <br />
-            <input type="text" ref={imagen} id="image" placeholder="Url de imagen..." />
+            <input className="colorBuscadores" type="text" ref={imagen} id="image" placeholder="Url de imagen..." />
           </div>
           <div className="input-group">
             <label htmlFor="image">Nueva imagen</label>
             <br />
-            <input type="text" ref={galeria} id="image" placeholder="Url de imagen..." onKeyUp={addGalleryItem} onKeyPress={prevenirEnvio} />
+            <input
+              className="colorBuscadores"
+              type="text"
+              ref={galeria}
+              id="image"
+              placeholder="Url de imagen..."
+              onKeyUp={addGalleryItem}
+              onKeyPress={prevenirEnvio}
+            />
 
             {product &&
               gallery &&
               gallery.map((item, i) => {
                 return (
-                  <div className="product-galleryItem" key={i}>
+                  <div className="product-galleryItem colorItems" key={i}>
                     <div className="product-galleryItem-img">
                       <div className="product-img">
                         <img src={item} alt={item} />

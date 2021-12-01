@@ -1,12 +1,15 @@
-h3 {
-  font-weight: normal;
-}
-
 .product {
   display: flex;
   width: 90%;
+  padding: 20px;
   margin: 25px 0;
   color: #ffff;
+  align-items: center;
+}
+
+.product h3 {
+  color: white;
+  font-weight: normal;
 }
 
 .product-img {
@@ -60,7 +63,6 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 4px;
-  cursor: pointer;
 }
 
 .tienda img {
@@ -89,7 +91,6 @@ h3 {
   position: relative;
   padding: 10px;
   margin: 15px 0;
-  background-color: #ccc;
   border-radius: 16px;
   font-size: 12px;
 }

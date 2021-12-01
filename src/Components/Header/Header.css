@@ -28,16 +28,17 @@ header > * {
 
 .header-form {
   background-color: #222;
+  position: relative;
+  margin-right: 10px;
 }
 .header-form input {
-  width: 100%;
   border-radius: 14px;
-  border: solid 2px #aaa;
-  padding: 4px 8px;
+  border: solid 1px #aaa;
   width: 240px;
-  background-color: #222;
   color: #aaa;
   outline-style: none;
+  padding: 4px 8px;
+  transition: 0.5s width;
 }
 
 .header-form input::placeholder {
@@ -45,11 +46,10 @@ header > * {
 }
 
 .header-form button {
+  position: absolute;
   background-color: transparent;
   border: none;
-  position: relative;
-  right: 30px;
-  top: 8px;
+  right: 11px;
   font-size: 10px;
 }
 
@@ -70,6 +70,17 @@ header > * {
 @media (max-width: 600px) {
   .header-form input {
     width: 42px;
+    height: 30px;
+    padding: 0;
+  }
+
+  .header-form button {
+    top: 4px;
+  }
+
+  .header-form input:focus, .header-form button:focus ~  input{
+    width: 160px;
+    padding-left: 8px;
   }
 
   .header-form input::placeholder {

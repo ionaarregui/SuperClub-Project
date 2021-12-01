@@ -2,7 +2,6 @@ import './Sidebar.css'
 import profileIcon from '../../Assets/perfil.png'
 import santanderLogo from '../../Assets/santanderLogo.svg'
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
 
 const Sidebar = ({ showMenu }) => {
   let showingMenu = showMenu ? 'abiertoMenu' : ''
@@ -64,7 +63,7 @@ const Sidebar = ({ showMenu }) => {
           </Link>
         </ul>
       </div>
-      <div className="linkProfile">
+      <div className="linkProfile colorBotonesUsuario">
         <Link to="/profile">
           <img src={profileIcon} alt="Imagen de perfil" />
           Olivia
