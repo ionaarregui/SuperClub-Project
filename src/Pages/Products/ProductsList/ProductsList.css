@@ -1,5 +1,6 @@
 .divMain {
     background-color: #191b1f;
+    padding: 10px 0;
 }
 
 .listaProductos {
@@ -23,6 +24,13 @@
     border-radius: 15px;
     align-items: center;
     box-shadow: 4px 4px 4px #000000;
+}
+
+.productos:first-child {
+    margin-top: 0;
+}
+.productos:last-child {
+    margin-bottom: 0;
 }
 
 .productos h4 {
