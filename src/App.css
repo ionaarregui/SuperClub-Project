@@ -5,8 +5,17 @@
   font-family: 'Roboto', sans-serif;
 }
 
+html {
+  overflow: hidden;
+}
+
+main {
+  overflow-y: scroll;
+}
+
 .App {
   display: flex;
   position: relative;
   min-height: 100vh;
+  overflow-x: hidden;
 }
