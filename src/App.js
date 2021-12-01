@@ -1,14 +1,20 @@
-import './App.css';
-import MainArea from './Components/MainArea/MainArea';
+import { useState } from 'react'
+import './App.css'
+import MainArea from './Components/MainArea/MainArea'
 import Sidebar from './Components/Sidebar/Sidebar'
 
 function App() {
+  const [showMenu, setShowMenu] = useState(false)
+  const handlerShowMenu = () => {
+    setShowMenu(!showMenu)
+  }
+
   return (
     <div className="App">
-      <Sidebar />
-      <MainArea />
+      <Sidebar showMenu={showMenu} />
+      <MainArea handler={handlerShowMenu} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
