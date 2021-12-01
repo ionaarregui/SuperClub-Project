@@ -29,7 +29,8 @@ main {
   margin: 15px 0px;
 }
 /* ELEMENTOS DE LOS FORMS */
-.form-container p {
+.form-container p,
+.form-container label {
   font-size: 14px;
   position: relative;
   top: 16px;
