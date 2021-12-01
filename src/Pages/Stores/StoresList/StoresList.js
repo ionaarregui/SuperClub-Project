@@ -1,26 +1,22 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { getStoresList } from '../../../Utils/StoreUtils'
+import Timer from '../../../Utils/Timer';
 import './StoresList.css';
 
 const StoresList = () => {
   const [stores, setStores] = useState([])
 
+  const [loading, setLoading] = useState(false)
+
   useEffect(() => {
-    getStoresList().then((data) => setStores(data))
+    setLoading(true);
+    getStoresList().then((data) => {setStores(data);
+    setLoading(false)})
   }, [])
 
-  const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-        }, 1000);
-    },[])
-
   return (
-      <>
-      {loading ? <h3>loading...</h3> :
+      <Timer loading={loading}>
     <ul className="divMain">
       {stores.map((store, i, i2, i3, i4, i5, i6, i7) => {
         return <li key={i} className="tiendas">
@@ -34,8 +30,8 @@ const StoresList = () => {
           </Link>
       </li>
       })}
-    </ul>}
-    </>
+    </ul>
+    </Timer>
   )
 }
 
