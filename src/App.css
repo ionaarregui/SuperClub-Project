@@ -38,39 +38,6 @@ body {
   background-color: #333333;
 }
 
-/* CLASES GLOBALES DESDE NEW PRODUCT */
-.form-container {
-  padding: 20px;
-  background-color: #eee;
-}
-.form-container h3 {
-  margin: 15px 0px;
-}
-/* ELEMENTOS DE LOS FORMS */
-.form-container p,
-.form-container label {
-  font-size: 14px;
-  position: relative;
-  top: 16px;
-}
-.form-container input,
-.form-container textarea,
-.form-container select {
-  border-radius: 14px;
-  border: 2px solid lightgrey;
-  padding: 4px 8px;
-}
-.form-container input {
-  width: 240px;
-}
-.form-container textarea {
-  width: 540px;
-  height: 120px;
-  padding: 8px 12px;
-}
-.p-contador {
-  width: 120px;
-}
 /* ELEMENTOS DE LA MINI GALERIA DE IMAGENES */
 .div-img-cargada {
   display: flex;
