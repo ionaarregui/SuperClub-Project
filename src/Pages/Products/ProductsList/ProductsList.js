@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getProductsList } from '../../../Utils/ProductUtils'
 import './ProductsList.css'
 
-const ProductsList = () => {
+const ProductsList = ({ searchContext }) => {
   const [products, setProducts] = useState([])
+
+  let { search } = useContext(searchContext)
 
   useEffect(() => {
     getProductsList().then((data) => setProducts(data))
@@ -24,6 +26,7 @@ const ProductsList = () => {
         <h3>loading...</h3>
       ) : (
         <ul className="divMain">
+          {console.log(search)}
           {products.map((prod, i, i2, i3, i4, i5, i6, i7) => {
             return (
               <li key={i} className="productos">

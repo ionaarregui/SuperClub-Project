@@ -3,11 +3,18 @@ import { ReactComponent as Search } from '../../Assets/magnify.svg'
 import { useMatch } from 'react-router'
 import './Header.css'
 import Button from '../Button/Button'
+import { useContext, useRef } from 'react'
 
-const Header = ({ handler }) => {
+const Header = ({ handler, searchContext }) => {
   let content
   const sectionMatch = useMatch('/:section')
   const idMatch = useMatch('/:section/:id')
+  const searchInput = useRef('')
+  let { setSearch } = useContext(searchContext)
+
+  const handleSearch = () => {
+    setSearch(searchInput.current.value)
+  }
 
   if (!sectionMatch && !idMatch) {
     content = (
@@ -36,7 +43,7 @@ const Header = ({ handler }) => {
           <h2 className="header-title">Productos</h2>
           <div className="header-right">
             <form className="header-form" action="">
-              <input type="text" placeholder="Buscar productos" />
+              <input type="text" placeholder="Buscar productos" ref={searchInput} onKeyUp={handleSearch} />
               <button>
                 <Search fill="#aaa" stroke="#aaa" width="20px" />
               </button>
@@ -79,7 +86,6 @@ const Header = ({ handler }) => {
       )
     }
   }
-
   return <header>{content}</header>
 }
 
