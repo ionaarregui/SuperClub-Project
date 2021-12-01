@@ -12,27 +12,15 @@ export const getProduct = async (id) => {
   return product
 }
 
-export const postProduct = async (
-  title,
-  price,
-  description = null,
-  image = null,
-  gallery = [],
-  category = null,
-  mostWanted = false,
-  store = null
-) => {
-  let body = JSON.stringify({
-    title,
-    price,
-    description,
-    image,
-    gallery,
-    category,
-    mostWanted,
-    store,
+export const postProduct = async (product) => {
+  let body = JSON.stringify(product)
+  const res = await fetch(`${baseUrl}`, {
+    method: 'POST',
+    body,
+    headers: {
+      'Content-Type': 'application/json',
+    },
   })
-  const res = await fetch(`${baseUrl}`, { method: 'POST', body })
   const response = await res.json()
   return response
 }

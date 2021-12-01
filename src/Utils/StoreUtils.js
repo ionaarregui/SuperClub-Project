@@ -33,3 +33,29 @@ export const postStore = async (
   const response = await res.json()
   return response
 }
+<<<<<<< HEAD
+=======
+
+export const putStore = async (
+  id,
+  name,
+  email = null,
+  city = null,
+  street = null,
+  number = null,
+  zipcode = null,
+  lat = null,
+  long = null,
+  phone = null
+) => {
+  let body = JSON.stringify({
+    name,
+    email,
+    address: { city, street, number, zipcode, geolocation: { lat, long } },
+    phone,
+  })
+  const res = await fetch(`${baseUrl}/${id}`, { method: 'PUT', body })
+  const response = await res.json()
+  return response
+}
+>>>>>>> dev

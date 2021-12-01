@@ -1,12 +1,78 @@
 * {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
 }
 
+html {
+  overflow: hidden;
+}
+
+main {
+  overflow-y: scroll;
+}
+
 .App {
   display: flex;
-  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* CLASES GLOBALES DESDE NEW PRODUCT */
+.form-container {
+  padding: 20px;
+  background-color: #eee;
+}
+.form-container h3 {
+  margin: 15px 0px;
+}
+/* ELEMENTOS DE LOS FORMS */
+.form-container p {
+  font-size: 14px;
+  position: relative;
+  top: 16px;
+}
+.form-container input,
+.form-container textarea,
+.form-container select {
+  border-radius: 14px;
+  border: 2px solid lightgrey;
+  padding: 4px 8px;
+}
+.form-container input {
+  width: 240px;
+}
+.form-container textarea {
+  width: 540px;
+  height: 120px;
+  padding: 8px 12px;
+}
+.p-contador {
+  width: 120px;
+}
+/* ELEMENTOS DE LA MINI GALERIA DE IMAGENES */
+.div-img-cargada {
+  display: flex;
+  background-color: #ccc;
+  padding: 8px;
+  border-radius: 16px;
+  margin-bottom: 8px;
+  width: 540px;
+}
+.div-img-picture {
+  height: 42px;
+  border-radius: 10px;
+}
+.div-img-url {
+  position: relative;
+  font-size: 13px;
+  top: 13px;
+  left: 10px;
+}
+.div-img-quitar {
+  position: relative;
+  top: 6px;
+  right: -210px;
 }
