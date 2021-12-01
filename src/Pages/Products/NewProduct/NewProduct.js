@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import PreviewImagenes from '../../../Components/PreviewImagenes/PreviewImagenes'
 import { postProduct } from '../../../Utils/ProductUtils'
 import Button from '../../../Components/Button/Button'
+import Contador from '../../../Components/Contador/Contador'
 
 const NewProduct = () => {
   let title = useRef('')
@@ -46,7 +47,8 @@ const NewProduct = () => {
           <br />
           <p>Stock</p>
           <br />
-          <input ref={stock} id="stock" name="stock" className="p-contador" type="number" defaultValue="1" required></input>
+          <Contador />
+          {/* <input ref={stock} id="stock" name="stock" className="p-contador" type="number" defaultValue="1" required></input> */}
           <br />
           <p>Descripción</p>
           <br />

@@ -1,0 +1,25 @@
+.contador {
+  display: flex;
+  justify-content: space-between;
+  width: 90px;
+  padding: 0px 8px;
+  border-radius: 14px;
+  border: 2px solid lightgrey;
+  background-color: #eee;
+  transition: all 250ms;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.contador-valor {
+  font-size: 15px;
+  position: relative;
+  top: 3px;
+}
+
+.operador {
+  font-size: 20px;
+  font-weight: bold;
+  border: 0px;
+  cursor: pointer;
+}
