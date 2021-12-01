@@ -1,8 +1,10 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import PreviewImagenes from '../../../Components/PreviewImagenes/PreviewImagenes'
 import { postProduct } from '../../../Utils/ProductUtils'
 import Button from '../../../Components/Button/Button'
 import Contador from '../../../Components/Contador/Contador'
+import { getStoresList } from '../../../Utils/StoreUtils'
+import './NewProduct.css'
 
 const NewProduct = () => {
   let title = useRef('')
@@ -11,9 +13,15 @@ const NewProduct = () => {
   let description = useRef('')
   let store = useRef('')
   let image = useRef('')
-  let stockCounter = document.querySelector('#stock')
+  let tienda = useRef('')
 
   let [contador, setContador] = useState(1)
+  let [stores, setStores] = useState([])
+
+  useEffect(async () => {
+    let tiendas = await getStoresList()
+    setStores(tiendas)
+  }, [])
 
   const handleResta = () => {
     contador--
@@ -67,12 +75,12 @@ const NewProduct = () => {
           <br />
           <p>Stock</p>
           <br />
-          <div className="contador">
-            <button type="button" onClick={handleResta} className="operador">
+          <div className="contador colorBuscadores">
+            <button type="button" onClick={handleResta} className="operador colorBuscadores">
               -
             </button>
-            <input id="stock" value={contador} name="stock" type="number" defaultValue="1" required></input>
-            <button type="button" onClick={handleSuma} className="operador">
+            <input className="colorBuscadores" id="stock" value={contador} name="stock" type="number" defaultValue="1" required></input>
+            <button type="button" onClick={handleSuma} className="operador colorBuscadores">
               +
             </button>
           </div>
@@ -92,14 +100,27 @@ const NewProduct = () => {
           <br />
           <p>Tienda</p>
           <br />
-          <select className="colorBuscadores" ref={store} id="store" name="store" defaultValue="0" type="number" required>
+          <select ref={tienda} className="colorBuscadores" ref={store} id="tienda" name="tienda" defaultValue="0" type="number" required>
             <option value="0" disabled>
               -- Seleccione una tienda --
             </option>
-            <option value="t1">Tienda 1</option>
-            <option value="t2">Tienda 2</option>
-            <option value="t3">Tienda 3</option>
+            {stores &&
+              stores.map((t) => (
+                <option value={t.name} key={t._id}>
+                  {t.name}
+                </option>
+              ))}
           </select>
+          {/* <select ref={store} id="store" name="store" defaultValue="0" type="number" required>
+            <option key="0" defaultValue="0" disabled>
+              -- Seleccione una tienda --
+            </option>
+            {tiendas.map((tienda) => (
+              <option value={tienda.id} key={tienda.id}>
+                {tienda.name}
+              </option>
+            ))}
+          </select> */}
           <br />
           <h3>Galería de imágenes</h3>
           <p>Nueva imagen</p>

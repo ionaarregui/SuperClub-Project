@@ -6,7 +6,7 @@ const ImagenCargada = ({ url }) => {
   }
 
   return (
-    <div className="div-img-cargada">
+    <div className="div-img-cargada colorItems">
       <img className="div-img-picture" src={url} alt="Producto cargado a la tienda" />
       <span className="div-img-url product-label">{url}</span>
       <div className="div-img-quitar">

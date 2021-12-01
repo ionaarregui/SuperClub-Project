@@ -33,7 +33,7 @@ header > * {
 }
 .header-form input {
   border-radius: 14px;
-  border: solid 2px #aaa;
+  border: solid 1px #aaa;
   width: 240px;
   color: #aaa;
   outline-style: none;
