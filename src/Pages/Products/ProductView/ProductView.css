@@ -1,12 +1,12 @@
-h3 {
-  font-weight: normal;
-}
-
 .product {
   display: flex;
   width: 90%;
   padding: 20px;
-  color: #ffff;
+}
+
+.product h3 {
+  color: white;
+  font-weight: normal;
 }
 
 .product-img {
