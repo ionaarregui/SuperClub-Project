@@ -21,6 +21,11 @@ header > * {
   color: white;
 }
 
+.header-title a {
+  text-decoration: none;
+  color: white;
+}
+
 .header-form {
   background-color: #222;
 }
@@ -45,4 +50,14 @@ header > * {
   right: 30px;
   top: 8px;
   font-size: 10px;
+}
+
+.header-left {
+  gap: 10px;
+}
+
+@media (max-width: 1024px) {
+  header {
+    width: 100vw;
+  }
 }

@@ -1,12 +1,16 @@
-import { ReactComponent as Arrow } from '../../Assets/chevron-right.svg'
-import { ReactComponent as Search } from '../../Assets/magnify.svg'
 import { useMatch } from 'react-router'
 import './Header.css'
 import Button from '../Button/Button'
 import { useContext, useRef } from 'react'
+import MenuButton from '../MenuButton/MenuButton'
+import SearchButton from '../SearchButton/SearchButton'
+import Arrow from '../Arrow/Arrow'
+import { deleteProduct } from '../../Utils/ProductUtils'
+import { Link } from 'react-router-dom'
 
 const Header = ({ handlerShowMenu, searchContext }) => {
-  let content
+  let title
+  let contentRight
   const sectionMatch = useMatch('/:section')
   const idMatch = useMatch('/:section/:id')
   const searchInput = useRef('')
@@ -17,76 +21,83 @@ const Header = ({ handlerShowMenu, searchContext }) => {
   }
 
   if (!sectionMatch && !idMatch) {
-    content = (
-      <>
-        <div>
-          <div onClick={()=>handlerShowMenu(true)}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-              version="1.1"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
-            </svg>
-          </div>
-          <h2 className="header-title">¡Hola Olivia!</h2>
-        </div>
-      </>
-    )
+    title = '¡Hola Olivia!'
   } else if (!idMatch) {
     if (sectionMatch.params.section === 'products') {
-      content = (
+      title = 'Productos'
+      contentRight = (
         <>
-          <h2 className="header-title">Productos</h2>
-          <div className="header-right">
-            <form className="header-form" action="">
-              <input type="text" placeholder="Buscar productos" ref={searchInput} onKeyUp={handleSearch} />
-              <button>
-                <Search fill="#aaa" stroke="#aaa" width="20px" />
-              </button>
-            </form>
-            <Button text="Agregar producto" />
-          </div>
+          <form className="header-form" action="" onSubmit={(e) => e.preventDefault()}>
+            <input type="text" placeholder="Buscar productos" ref={searchInput} onKeyUp={handleSearch} />
+            <SearchButton />
+          </form>
+          <Link to="/products/new">
+            <Button text="Agregar Producto" />
+          </Link>
         </>
       )
     } else if (sectionMatch.params.section === 'stores') {
-      content = (
+      title = 'Tiendas'
+      contentRight = (
         <>
-          <h2 className="header-title">Tiendas</h2>
-          <div className="header-right">
-            <form className="header-form" action="">
-              <input type="text" placeholder="Buscar tiendas" ref={searchInput} onKeyUp={handleSearch} />
-              <button>
-                <Search fill="#aaa" stroke="#aaa" width="20px" />
-              </button>
-            </form>
+          <form className="header-form" action="" onSubmit={(e) => e.preventDefault()}>
+            <input type="text" placeholder="Buscar tiendas" ref={searchInput} onKeyUp={handleSearch} />
+            <SearchButton />
+          </form>
+          <Link to="/stores/new">
             <Button text="Agregar tienda" />
-          </div>
+          </Link>
         </>
       )
     }
   } else if (!sectionMatch) {
     if (idMatch.params.section === 'products') {
-      content = (
-        <>
-          <h2 className="header-title">
-            Productos <Arrow fill="white" stroke="white" /> #{idMatch.params.id}
-          </h2>
-          <Button text="Eliminar" />
-        </>
-      )
+      if (idMatch.params.id === 'new') {
+        title = (
+          <>
+            <Link to="/products">Productos</Link> <Arrow /> Nuevo Producto
+          </>
+        )
+      } else {
+        title = (
+          <>
+            <Link to="/products">Productos</Link> <Arrow /> #{idMatch.params.id}
+          </>
+        )
+        contentRight = (
+          <>
+            <Button text="Eliminar" callback={() => deleteProduct(idMatch.params.id)} />
+          </>
+        )
+      }
     } else if (idMatch.params.section === 'stores') {
-      content = (
-        <h2 className="header-title">
-          Tiendas <Arrow fill="white" stroke="white" /> #{idMatch.params.id}
-        </h2>
-      )
+      if (idMatch.params.id === 'new') {
+        title = (
+          <>
+            <Link to="/stores">Tiendas</Link> <Arrow /> Nueva Tienda
+          </>
+        )
+      } else {
+        title = (
+          <>
+            <Link to="/stores">Tiendas</Link> <Arrow /> #{idMatch.params.id}
+          </>
+        )
+      }
     }
   }
-  return <header>{content}</header>
+
+  return (
+    <header>
+      <div class="header-left">
+        <div onClick={() => handlerShowMenu(true)}>
+          <MenuButton />
+        </div>
+        <h2 className="header-title">{title}</h2>
+      </div>
+      <div class="header-right">{contentRight}</div>
+    </header>
+  )
 }
 
 export default Header
