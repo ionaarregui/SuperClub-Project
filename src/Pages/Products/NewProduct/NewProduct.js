@@ -4,6 +4,7 @@ import { postProduct, getProduct } from '../../../Utils/ProductUtils'
 import Button from '../../../Components/Button/Button'
 import { getStoresList } from '../../../Utils/StoreUtils'
 import './NewProduct.css'
+import { useNavigate } from 'react-router'
 
 const NewProduct = () => {
   const [product, setProduct] = useState([])
@@ -11,6 +12,8 @@ const NewProduct = () => {
   const [store, setStore] = useState([])
   const [gallery, setGallery] = useState([])
   let [contador, setContador] = useState(1)
+
+  const navigate = useNavigate()
 
   let title = useRef('')
   let category = useRef('')
@@ -60,7 +63,9 @@ const NewProduct = () => {
       gallery: '',
       mostWanted: false,
     }
-    postProduct(product).catch((err) => console.error('Error santanderístico al cargar el producto'))
+    postProduct(product)
+      .then(() => navigate('/products'))
+      .catch((err) => console.error('Error santanderístico al cargar el producto'))
   }
 
   const prevenirEnvio = (e) => {

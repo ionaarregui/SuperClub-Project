@@ -2,12 +2,15 @@ import { useRef } from 'react'
 import { postStore } from '../../../Utils/StoreUtils'
 import Button from '../../../Components/Button/Button'
 import './NewStore.css'
+import { useNavigate } from 'react-router'
 
 const NewStore = () => {
   let name = useRef('')
   let logo = useRef('')
   let email = useRef('')
   let phone = useRef('')
+
+  const navigate = useNavigate()
 
   const submitStore = (e) => {
     e.preventDefault()
@@ -17,7 +20,9 @@ const NewStore = () => {
       email: email.current.value,
       phone: phone.current.value,
     }
-    postStore(store).catch((err) => console.error('Error santanderístico al cargar la tienda'))
+    postStore(store)
+      .then(() => navigate('/stores'))
+      .catch((err) => console.error('Error santanderístico al cargar la tienda'))
   }
 
   return (
@@ -35,7 +40,7 @@ const NewStore = () => {
           <br />
           <p>Email</p>
           <br />
-          <input className="colorBuscadores" ref={email} id="email" type="text" required />
+          <input className="colorBuscadores" ref={email} id="email" type="email" required />
           <br />
           <p>Teléfono</p>
           <br />
