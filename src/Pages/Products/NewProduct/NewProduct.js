@@ -1,6 +1,7 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import PreviewImagenes from '../../../Components/PreviewImagenes/PreviewImagenes'
 import { postProduct } from '../../../Utils/ProductUtils'
+import PreviewImagenes from '../../../Components/PreviewImagenes/PreviewImagenes'
 import Button from '../../../Components/Button/Button'
 import Contador from '../../../Components/Contador/Contador'
 
@@ -8,10 +9,21 @@ const NewProduct = () => {
   let title = useRef('')
   let category = useRef('')
   let price = useRef(0)
-  let stock = useRef(0)
   let description = useRef('')
   let store = useRef('')
   let image = useRef('')
+  let stockCounter = document.querySelector('#stock')
+
+  let [contador, setContador] = useState(1)
+
+  const handleResta = () => {
+    contador--
+    setContador(contador)
+  }
+  const handleSuma = () => {
+    contador++
+    setContador(contador)
+  }
 
   const submitProducto = (e) => {
     e.preventDefault()
@@ -20,6 +32,7 @@ const NewProduct = () => {
       price: price.current.value,
       description: description.current.value,
       image: image.current.value,
+      stock: contador,
       category: category.current.value,
       store: '',
       gallery: '',
@@ -47,7 +60,15 @@ const NewProduct = () => {
           <br />
           <p>Stock</p>
           <br />
-          <Contador />
+          <div className="contador">
+            <button type="button" onClick={handleResta} className="operador">
+              -
+            </button>
+            <input id="stock" value={contador} name="stock" type="number" defaultValue="1" required></input>
+            <button type="button" onClick={handleSuma} className="operador">
+              +
+            </button>
+          </div>
           {/* <input ref={stock} id="stock" name="stock" className="p-contador" type="number" defaultValue="1" required></input> */}
           <br />
           <p>Descripción</p>
