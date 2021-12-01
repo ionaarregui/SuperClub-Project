@@ -4,13 +4,31 @@ import { useMatch } from 'react-router'
 import './Header.css'
 import Button from '../Button/Button'
 
-const Header = () => {
+const Header = ({ handler }) => {
   let content
   const sectionMatch = useMatch('/:section')
   const idMatch = useMatch('/:section/:id')
 
   if (!sectionMatch && !idMatch) {
-    content = <h2 className="header-title">¡Hola Olivia!</h2>
+    content = (
+      <>
+        <div>
+          <div onClick={handler}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              version="1.1"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+            </svg>
+          </div>
+          <h2 className="header-title">¡Hola Olivia!</h2>
+        </div>
+      </>
+    )
   } else if (!idMatch) {
     if (sectionMatch.params.section === 'products') {
       content = (
