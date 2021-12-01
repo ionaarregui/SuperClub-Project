@@ -5,17 +5,16 @@ import './Header.css'
 import Button from '../Button/Button'
 import { useContext } from 'react'
 
-const Header = ({ showMenu }) => {
+const Header = ({ handlerShowMenu }) => {
   let content
   const sectionMatch = useMatch('/:section')
   const idMatch = useMatch('/:section/:id')
-  let {value, setValue} = useContext(showMenu)
 
   if (!sectionMatch && !idMatch) {
     content = (
       <>
         <div>
-          <div onClick={()=>setValue(!value)}>
+          <div onClick={()=>handlerShowMenu(true)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
