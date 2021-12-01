@@ -42,7 +42,7 @@ const Header = ({ handler, searchContext }) => {
         <>
           <h2 className="header-title">Productos</h2>
           <div className="header-right">
-            <form className="header-form" action="">
+            <form className="header-form" action="" onSubmit={(e) => e.preventDefault()}>
               <input type="text" placeholder="Buscar productos" ref={searchInput} onKeyUp={handleSearch} />
               <button>
                 <Search fill="#aaa" stroke="#aaa" width="20px" />
@@ -57,7 +57,7 @@ const Header = ({ handler, searchContext }) => {
         <>
           <h2 className="header-title">Tiendas</h2>
           <div className="header-right">
-            <form className="header-form" action="">
+            <form className="header-form" action="" onSubmit={(e) => e.preventDefault()}>
               <input type="text" placeholder="Buscar tiendas" ref={searchInput} onKeyUp={handleSearch} />
               <button>
                 <Search fill="#aaa" stroke="#aaa" width="20px" />
