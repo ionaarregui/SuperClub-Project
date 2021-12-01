@@ -1,0 +1,35 @@
+.divMain {
+    background-color: #191b1f;
+}
+
+.listaStores {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imagenesTiendas {
+    border-radius: 15px;
+    width: 80px;
+    height: 80px;
+}
+
+.tiendas {
+    display: flex;
+    padding: 5px;
+    margin: 10px 10px 5px 10px;
+    background-color: grey;
+    border-radius: 15px;
+    align-items: center;
+    box-shadow: 4px 4px 4px #000000;
+}
+
+.tiendas h4 {
+    font-weight: normal;
+}
+
+.flechita {
+    margin-left: auto;
+    padding-right: 15px;
+}

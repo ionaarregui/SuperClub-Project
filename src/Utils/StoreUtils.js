@@ -35,6 +35,7 @@ export const postStore = async (
 }
 
 export const putStore = async (
+  id,
   name,
   email = null,
   city = null,

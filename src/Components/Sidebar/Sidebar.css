@@ -1,10 +1,104 @@
 .navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 296px;
-  background-color: orange;
+  height: 100vh;
+  z-index: 99;
+  left: 0;
+  background-color: rgba(0, 0, 0, 1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  transition: 0.5s transform;
+  backdrop-filter: blur(5px);
+  padding: 10px;
+  color: white;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.logoSant {
+  width: 220px;
+  margin-bottom: 20px;
+}
+
+.options {
+  padding: 5px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+
+.options:hover, .linkProfile {
+  background-color: rgb(245, 245, 245, 0.3);
+  backdrop-filter: blur(2px);
+}
+
+.iconosMenu {
+  fill: white;
+  margin-right: 10px;
+}
+
+.linkProfile {
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.linkProfile img {
+  width: 30px;
+  margin-right: 5px;
+}
+
+.abiertoMenu {
+  transform: translateX(0) !important;
+}
+.changeMode {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+.botonSwitch {
+  cursor: pointer;
+  width: 30px;
+  border-radius: 18px;
+  height: 18px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  border-left: none;
+  display: flex;
+  transition: 0.5s background-color, 0.5s border;
+  align-items: center;
+  margin-right: 10px;
+}
+.opcionSwitch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: black;
+  transition: 0.5s;
+}
+
+.botonSwitchOn {
+  background-color: black;
+  border: 1px solid white;
+  border-right: none;
+}
+
+.opcionSwitchOn {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 9, 0.3);
+  transform: translateX(12px);
 }
 
 @media (max-width: 1024px) {
   .navbar {
-    display: hidden;
+    transform: translateX(-100vw);
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
   }
 }

@@ -9,15 +9,15 @@ import StoresView from '../../Pages/Stores/StoresView/StoresView'
 import NewStore from '../NewStore/NewStore'
 import './Content.css'
 
-const Content = () => {
+const Content = ({ searchContext }) => {
   return (
     <div className="content">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<ProductsList />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/products" element={<ProductsList searchContext={searchContext} />} />
         <Route path="/products/:id" element={<ProductView />} />
         <Route path="/products/new" element={<NewProduct />} />
-        <Route path="/stores" element={<StoresList />} />
+        <Route path="/stores" element={<StoresList searchContext={searchContext} />} />
         <Route path="/stores/:id" element={<StoresView />} />
         <Route path="/stores/new" element={<NewStore />} />
         <Route path="/profile" element={<NotFound />} />

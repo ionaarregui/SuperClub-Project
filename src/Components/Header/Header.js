@@ -2,42 +2,68 @@ import { ReactComponent as Arrow } from '../../Assets/chevron-right.svg'
 import { ReactComponent as Search } from '../../Assets/magnify.svg'
 import { useMatch } from 'react-router'
 import './Header.css'
+import Button from '../Button/Button'
+import { useContext, useRef } from 'react'
 
-const Header = () => {
+const Header = ({ handler, searchContext }) => {
   let content
   const sectionMatch = useMatch('/:section')
   const idMatch = useMatch('/:section/:id')
+  const searchInput = useRef('')
+  let { setSearch } = useContext(searchContext)
+
+  const handleSearch = () => {
+    setSearch(searchInput.current.value)
+  }
 
   if (!sectionMatch && !idMatch) {
-    content = <div className="header-title">¡Hola Olivia!</div>
+    content = (
+      <>
+        <div>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              version="1.1"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+            </svg>
+          </div>
+          <h2 className="header-title">¡Hola Olivia!</h2>
+        </div>
+      </>
+    )
   } else if (!idMatch) {
     if (sectionMatch.params.section === 'products') {
       content = (
         <>
-          <div className="header-title">Productos</div>
+          <h2 className="header-title">Productos</h2>
           <div className="header-right">
-            <div className="searchBar">
-              <input type="text" placeholder="Buscar productos" />
+            <form className="header-form" action="">
+              <input type="text" placeholder="Buscar productos" ref={searchInput} onKeyUp={handleSearch} />
               <button>
-                <Search fill="black" stroke="black" />
+                <Search fill="#aaa" stroke="#aaa" width="20px" />
               </button>
-            </div>
-            <button>Agregar producto</button>
+            </form>
+            <Button text="Agregar producto" />
           </div>
         </>
       )
     } else if (sectionMatch.params.section === 'stores') {
       content = (
         <>
-          <div className="header-title">Tiendas</div>
+          <h2 className="header-title">Tiendas</h2>
           <div className="header-right">
-            <div className="searchBar">
-              <input type="text" placeholder="Buscar tiendas" />
+            <form className="header-form" action="">
+              <input type="text" placeholder="Buscar tiendas" ref={searchInput} onKeyUp={handleSearch} />
               <button>
-                <Search fill="black" stroke="black" />
+                <Search fill="#aaa" stroke="#aaa" width="20px" />
               </button>
-            </div>
-            <button>Agregar tienda</button>
+            </form>
+            <Button text="Agregar tienda" />
           </div>
         </>
       )
@@ -46,21 +72,20 @@ const Header = () => {
     if (idMatch.params.section === 'products') {
       content = (
         <>
-          <div className="header-title">
+          <h2 className="header-title">
             Productos <Arrow fill="white" stroke="white" /> #{idMatch.params.id}
-          </div>
-          <button>Eliminar</button>
+          </h2>
+          <Button text="Eliminar" />
         </>
       )
     } else if (idMatch.params.section === 'stores') {
       content = (
-        <div className="header-title">
+        <h2 className="header-title">
           Tiendas <Arrow fill="white" stroke="white" /> #{idMatch.params.id}
-        </div>
+        </h2>
       )
     }
   }
-
   return <header>{content}</header>
 }
 
