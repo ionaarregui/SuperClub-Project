@@ -85,14 +85,10 @@ header > * {
     align-items: top;
   }
 
-  .add-element-mobile div {
-    height: 20px;
-  }
-
   .add-element-mobile button {
     font-weight: bold;
-    font-size: 28px;
-    border-radius: 50px;
-    padding: 0px 2px;
+    font-size: 24px;
+    border-radius: 50%;
+    padding: 0px 10px;
   }
 }
