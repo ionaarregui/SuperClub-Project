@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background-color: #191b1f;
+  background-color: #222222;
 }
 
 .App {
@@ -40,6 +40,7 @@ body {
   background-color: #333333;
   color: white;
   outline-style: none;
+  border: 1px solid lightgrey;
 }
 
 /*MODO CLARO CLASES COLORES*/
