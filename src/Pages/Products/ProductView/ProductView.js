@@ -5,7 +5,6 @@ import { getProduct, putProduct } from '../../../Utils/ProductUtils'
 import { getStoresList } from '../../../Utils/StoreUtils'
 import './ProductView.css'
 import notImage from '../../../Assets/image-not-found.png'
-import ImagenCargada from '../../../Components/PreviewImagenes/ImagenCargada'
 
 const ProductView = () => {
   const [product, setProduct] = useState([])

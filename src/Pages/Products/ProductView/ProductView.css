@@ -5,7 +5,7 @@ h3 {
 .product {
   display: flex;
   width: 90%;
-  margin: 25px 0;
+  padding: 20px;
   color: #ffff;
 }
 
@@ -60,7 +60,6 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 4px;
-  cursor: pointer;
 }
 
 .tienda img {
