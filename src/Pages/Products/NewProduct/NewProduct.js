@@ -1,26 +1,42 @@
 import { useRef, useState, useEffect } from 'react'
 import PreviewImagenes from '../../../Components/PreviewImagenes/PreviewImagenes'
-import { postProduct } from '../../../Utils/ProductUtils'
+import { postProduct, getProduct } from '../../../Utils/ProductUtils'
 import Button from '../../../Components/Button/Button'
 import { getStoresList } from '../../../Utils/StoreUtils'
 import './NewProduct.css'
 
 const NewProduct = () => {
+  const [product, setProduct] = useState([])
+  const [stores, setStores] = useState([])
+  const [store, setStore] = useState([])
+  const [gallery, setGallery] = useState([])
+  let [contador, setContador] = useState(1)
+
   let title = useRef('')
   let category = useRef('')
   let price = useRef(0)
   let description = useRef('')
-  let store = useRef('')
   let image = useRef('')
   let tienda = useRef('')
-
-  let [contador, setContador] = useState(1)
-  let [stores, setStores] = useState([])
+  let galeria = useRef('')
+  let stock = useRef('')
 
   useEffect(async () => {
     let tiendas = await getStoresList()
     setStores(tiendas)
   }, [])
+
+  const addGalleryItem = (e) => {
+    e.preventDefault()
+    if (galeria.current.value !== '' && e.key == 'Enter') {
+      setGallery([...gallery, galeria.current.value])
+      galeria.current.value = ''
+    }
+  }
+
+  const deleteGalleryItem = (item) => {
+    setGallery(gallery.filter((e) => e != item))
+  }
 
   const handleResta = () => {
     contador--
@@ -45,6 +61,12 @@ const NewProduct = () => {
       mostWanted: false,
     }
     postProduct(product).catch((err) => console.error('Error santanderístico al cargar el producto'))
+  }
+
+  const prevenirEnvio = (e) => {
+    if (e.key == 'Enter') {
+      e.preventDefault(e)
+    }
   }
 
   return (
@@ -110,24 +132,36 @@ const NewProduct = () => {
                 </option>
               ))}
           </select>
-          {/* <select ref={store} id="store" name="store" defaultValue="0" type="number" required>
-            <option key="0" defaultValue="0" disabled>
-              -- Seleccione una tienda --
-            </option>
-            {tiendas.map((tienda) => (
-              <option value={tienda.id} key={tienda.id}>
-                {tienda.name}
-              </option>
-            ))}
-          </select> */}
           <br />
           <h3>Galería de imágenes</h3>
-          <p>Nueva imagen</p>
-          <br />
-          <input className="colorBuscadores" ref={image} id="image" name="image" type="text" placeholder="Ingrese URL de la imagen"></input>
-          <br />
-          <br />
-          <PreviewImagenes />
+          <div className="input-group">
+            <p>Nueva imagen</p>
+            <br />
+            <input
+              className="colorBuscadores"
+              type="text"
+              ref={galeria}
+              id="image"
+              placeholder="Url de imagen..."
+              onKeyUp={addGalleryItem}
+              onKeyPress={prevenirEnvio}
+            />
+            {product &&
+              gallery &&
+              gallery.map((item, i) => {
+                return (
+                  <div className="product-galleryItem" key={i}>
+                    <div className="product-galleryItem-img">
+                      <div className="product-img">
+                        <img src={item} alt={item} />
+                      </div>
+                      <p>{item}</p>
+                    </div>
+                    <Button type="button" text="Quitar" callback={() => deleteGalleryItem(item)} />
+                  </div>
+                )
+              })}
+          </div>
           <Button id="submitBtn" text="Guardar" callback={() => console.log('callback')} />
         </form>
       </div>
