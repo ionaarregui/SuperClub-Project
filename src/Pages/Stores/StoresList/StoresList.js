@@ -10,17 +10,8 @@ const StoresList = () => {
     getStoresList().then((data) => setStores(data))
   }, [])
 
-  const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-        }, 1000);
-    },[])
-
   return (
       <>
-      {loading ? <h3>loading...</h3> :
     <ul className="divMain">
       {stores.map((store, i, i2, i3, i4, i5, i6, i7) => {
         return <li key={i} className="tiendas">
@@ -34,7 +25,7 @@ const StoresList = () => {
           </Link>
       </li>
       })}
-    </ul>}
+    </ul>
     </>
   )
 }
