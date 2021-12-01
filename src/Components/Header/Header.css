@@ -57,7 +57,7 @@ header > * {
   gap: 10px;
 }
 
-.add-element-mobile {
+.header-btn-mobile {
   display: none;
 }
 
@@ -76,19 +76,19 @@ header > * {
     color: transparent;
   }
 
-  .add-element-desktop {
+  .header-btn-desktop {
     display: none;
   }
 
-  .add-element-mobile {
+  .header-btn-mobile {
     display: flex;
     align-items: top;
   }
 
-  .add-element-mobile button {
+  .header-btn-mobile button {
     font-weight: bold;
     font-size: 24px;
     border-radius: 50%;
-    padding: 0px 10px;
+    padding: 0px 12px;
   }
 }
