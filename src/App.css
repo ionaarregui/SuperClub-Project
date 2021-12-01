@@ -1,18 +1,15 @@
 * {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .App {
   display: flex;
-  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  min-height: 100vh;
 }
-
-
-
-
 
 /* CLASES GLOBALES DESDE NEW PRODUCT */
 .new-product-form-container{

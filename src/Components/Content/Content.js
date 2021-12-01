@@ -13,7 +13,7 @@ const Content = () => {
   return (
     <div className="content">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/products" element={<ProductsList />} />
         <Route path="/products/:id" element={<ProductView />} />
         <Route path="/products/new" element={<NewProduct />} />
