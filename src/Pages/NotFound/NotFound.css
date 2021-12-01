@@ -1,0 +1,9 @@
+.elsaCorriendo {
+    width: 300px;
+}
+
+.error404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
