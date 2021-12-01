@@ -5,7 +5,7 @@ import './Header.css'
 import Button from '../Button/Button'
 import { useContext, useRef } from 'react'
 
-const Header = ({ handler, searchContext }) => {
+const Header = ({ handlerShowMenu, searchContext }) => {
   let content
   const sectionMatch = useMatch('/:section')
   const idMatch = useMatch('/:section/:id')
@@ -20,7 +20,7 @@ const Header = ({ handler, searchContext }) => {
     content = (
       <>
         <div>
-          <div>
+          <div onClick={()=>handlerShowMenu(true)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"

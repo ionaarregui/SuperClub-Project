@@ -9,8 +9,8 @@ html {
   overflow: hidden;
 }
 
-main {
-  overflow-y: scroll;
+body {
+  background-color: #191b1f;
 }
 
 .App {

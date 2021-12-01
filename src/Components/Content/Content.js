@@ -13,7 +13,7 @@ const Content = ({ searchContext }) => {
   return (
     <div className="content">
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductsList searchContext={searchContext} />} />
         <Route path="/products/:id" element={<ProductView />} />
         <Route path="/products/new" element={<NewProduct />} />
