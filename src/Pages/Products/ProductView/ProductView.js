@@ -11,10 +11,10 @@ const ProductView = () => {
   const [stores, setStores] = useState([])
   const [store, setStore] = useState([])
   const [gallery, setGallery] = useState([])
+  let [contador, setContador] = useState(1)
 
   const nombre = useRef('')
   const categoria = useRef('')
-  const stock = useRef('')
   const precio = useRef('')
   const descripcion = useRef('')
   const tienda = useRef('')
@@ -33,9 +33,10 @@ const ProductView = () => {
     setStore(storeProduct)
     setStores(tiendas)
     setGallery(producto.gallery)
+    setContador(producto.stock || 0)
+    console.log(producto.stock)
     nombre.current.value = producto.title || ''
     precio.current.value = producto.price || 0
-    stock.current.value = producto.stock || 0
     descripcion.current.value = producto.description || ''
     tienda.current.value = producto.store || ''
     categoria.current.value = producto.category || ''
@@ -60,7 +61,7 @@ const ProductView = () => {
       _id: product._id,
       title: nombre.current.value,
       price: precio.current.value,
-      stock: stock.current.value,
+      stock: contador,
       description: descripcion.current.value,
       image: imagen.current.value,
       category: categoria.current.value,
@@ -75,6 +76,15 @@ const ProductView = () => {
     if (e.key == 'Enter') {
       e.preventDefault(e)
     }
+  }
+
+  const handleResta = () => {
+    contador--
+    setContador(contador)
+  }
+  const handleSuma = () => {
+    contador++
+    setContador(contador)
   }
 
   return (
@@ -128,10 +138,16 @@ const ProductView = () => {
             <br />
             <input className="colorBuscadores" required type="number" ref={precio} id="precio" />
           </div>
-          <div className="input-group">
-            <label htmlFor="stock">Stock</label>
-            <br />
-            <input className="colorBuscadores" type="number" ref={stock} id="stock" />
+          <p>Stock</p>
+          <br />
+          <div className="contador colorBuscadores">
+            <button type="button" onClick={handleResta} className="operador colorBuscadores">
+              -
+            </button>
+            <input className="colorBuscadores" id="stock" value={contador} name="stock" type="number" defaultValue="1" required></input>
+            <button type="button" onClick={handleSuma} className="operador colorBuscadores">
+              +
+            </button>
           </div>
           <div className="input-group">
             <label htmlFor="descripcion">Descripcion</label>
