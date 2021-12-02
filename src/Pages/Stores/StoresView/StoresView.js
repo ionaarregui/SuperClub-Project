@@ -1,11 +1,14 @@
 import { useEffect, useState, useRef } from 'react'
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import Button from '../../../Components/Button/Button'
 import notImage from '../../../Assets/image-not-found.png'
 import { getStore, putStore } from '../../../Utils/StoreUtils'
+import Timer from '../../../Utils/Timer'
 import './StoresView.css'
 
 const StoresView = () => {
+  const navegate = useNavigate()
+  const [loading, setLoading] = useState(false)
   const [store, setStore] = useState([])
   const { id } = useParams()
 
@@ -15,9 +18,11 @@ const StoresView = () => {
   const phone = useRef('')
 
   useEffect(async () => {
+    setLoading(true)
     let tienda = await getStore(id)
-    console.log(tienda)
     setStore(tienda)
+    setTimeout(setLoading(false), 1000)
+
     name.current.value = tienda.name || ''
     logo.current.value = tienda.logo || ''
     email.current.value = tienda.email || ''
@@ -36,11 +41,13 @@ const StoresView = () => {
       phone: phone.current.value,
     }
 
-    putStore(store._id, storeEdit).catch((err) => console.error('Error santanderístico al cargar el producto'))
+    putStore(store._id, storeEdit)
+      .then(navegate('/stores'))
+      .catch((err) => console.error('Error santanderístico al cargar el producto'))
   }
 
   return (
-    <>
+    <Timer loading={loading}>
       <div className="product colorPrincipal">
         <div className="product-img">
           <img src={store.logo ? store.logo : notImage} alt={store.name} />
@@ -75,12 +82,18 @@ const StoresView = () => {
           </div>
 
           <div className="actions">
-            <Button type="button" text="Cancelar" callback={() => {}} />
+            <Button
+              type="button"
+              text="Cancelar"
+              callback={() => {
+                navegate('/stores')
+              }}
+            />
             <Button text="Guardar" callback={() => {}} />
           </div>
         </form>
       </div>
-    </>
+    </Timer>
   )
 }
 

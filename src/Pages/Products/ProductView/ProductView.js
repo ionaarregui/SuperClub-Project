@@ -5,9 +5,11 @@ import { getProduct, putProduct } from '../../../Utils/ProductUtils'
 import { getStoresList } from '../../../Utils/StoreUtils'
 import './ProductView.css'
 import notImage from '../../../Assets/image-not-found.png'
+import Timer from '../../../Utils/Timer'
 
 const ProductView = () => {
   const navegate = useNavigate()
+  const [loading, setLoading] = useState(false)
   const [product, setProduct] = useState([])
   const [stores, setStores] = useState([])
   const [store, setStore] = useState([])
@@ -24,12 +26,15 @@ const ProductView = () => {
 
   const { id } = useParams()
   useEffect(async () => {
+    setLoading(true)
     let producto = await getProduct(id)
     let tiendas = await getStoresList()
     let storeProduct = setTimeout(
       tiendas.find((t) => t._id === producto.store),
       1000
     )
+    setTimeout(setLoading(false), 1000)
+
     setProduct(producto)
     setStore(storeProduct)
     setStores(tiendas)
@@ -91,7 +96,7 @@ const ProductView = () => {
   }
 
   return (
-    <>
+    <Timer loading={loading}>
       <div className="product colorPrincipal">
         <div className="product-img">
           <img src={product.image ? product.image : notImage} alt={product.title} />
@@ -210,12 +215,18 @@ const ProductView = () => {
               })}
           </div>
           <div className="actions">
-            <Button type="button" text="Cancelar" callback={() => {}} />
+            <Button
+              type="button"
+              text="Cancelar"
+              callback={() => {
+                navegate('/products')
+              }}
+            />
             <Button text="Guardar" callback={() => {}} />
           </div>
         </form>
       </div>
-    </>
+    </Timer>
   )
 }
 
