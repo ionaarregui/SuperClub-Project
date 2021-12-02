@@ -1,13 +1,13 @@
 .product {
   display: flex;
   width: 90%;
-  padding: 20px;
-  color: #ffff;
+  padding: 0 20px;
+  color: var(--letter);
   align-items: center;
 }
 
 .product h3 {
-  color: white;
+  color: var(--letter);
   font-weight: normal;
 }
 

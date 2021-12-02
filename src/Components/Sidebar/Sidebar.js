@@ -2,9 +2,24 @@ import './Sidebar.css'
 import profileIcon from '../../Assets/perfil.png'
 import santanderLogo from '../../Assets/santanderLogo.svg'
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 const Sidebar = ({ showMenu }) => {
   let showingMenu = showMenu ? 'abiertoMenu' : ''
+  const [checked, setChecked] = useState(localStorage.getItem('theme') === 'dark' ? true : false)
+
+  const toggleThemeChange = () => {
+    if (checked === false) {
+      localStorage.setItem('theme', 'dark')
+      setChecked(true)
+    } else {
+      localStorage.setItem('theme', 'light')
+      setChecked(false)
+    }
+  }
+  useEffect(() => {
+    document.getElementsByTagName('HTML')[0].setAttribute('data-theme', localStorage.getItem('theme'))
+  }, [checked])
 
   return (
     <nav className={'navbar ' + showingMenu}>
@@ -63,12 +78,12 @@ const Sidebar = ({ showMenu }) => {
           </Link>
         </ul>
       </div>
-      <div className="linkProfile colorBotonesUsuario">
+      <div className="linkProfile colorProfileSidebar">
         <Link to="/profile">
           <img src={profileIcon} alt="Imagen de perfil" />
           Olivia
         </Link>
-        <div className="changeMode">
+        <div className="changeMode" onClick={() => toggleThemeChange()}>
           <div id="botonSwitch" className="botonSwitch">
             <div id="opcionSwitch" className="opcionSwitch"></div>
           </div>

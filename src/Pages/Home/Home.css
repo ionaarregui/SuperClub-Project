@@ -1,7 +1,7 @@
 .home {
   padding: 0 10px;
   padding-top: 20px;
-  color: white;
+  color: var(--letter);
 }
 
 .blockInformation {
@@ -27,7 +27,7 @@
 }
 
 .home a {
-  color: white;
+  color: var(--letter);
   text-decoration: none;
 }
 

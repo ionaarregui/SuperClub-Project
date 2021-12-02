@@ -1,7 +1,7 @@
 .menu-button {
   display: none;
-  fill: white;
-  stroke: white;
+  fill: var(--letter);
+  stroke: var(--letter);
 }
 
 @media (max-width: 1024px) {

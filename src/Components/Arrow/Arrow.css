@@ -1,4 +1,4 @@
 .arrow {
-  fill: white;
-  stroke: white;
+  fill: var(--letter);
+  stroke: var(--letter);
 }
