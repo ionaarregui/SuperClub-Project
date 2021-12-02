@@ -1,7 +1,7 @@
 .home {
   padding: 0 10px;
   padding-top: 20px;
-  color: white;
+  color: var(--letter);
 }
 
 .blockInformation {
@@ -9,7 +9,6 @@
   justify-content: space-between;
   padding: 15px;
   border-radius: 20px;
-  background-color: rgb(245, 245, 245, 0.05);
 }
 
 .blockInformation:first-child {
@@ -27,7 +26,7 @@
 }
 
 .home a {
-  color: white;
+  color: var(--letter);
   text-decoration: none;
 }
 
@@ -43,7 +42,7 @@
   text-align: center;
   padding: 10px;
   border-radius: 20px;
-  background-color: rgb(245, 245, 245, 0.15);
+  background-color: var(--profile);
 }
 
 .blockButton:first-child {

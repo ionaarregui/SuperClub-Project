@@ -1,6 +1,24 @@
-:root {
-  --white: rgb(255, 255, 255, 1);
+html {
+  --primary: #222222;
+  --buttons: #494f51;
+  --profile: #494f51;
+  --buttonText: #ffff;
+  --letter: #ffff;
+  --items: rgb(245, 245, 245, 0.05);
+  --buscadores: #333333;
+  --sidebar: rgba(0, 0, 0, 0.8);
 }
+
+html[data-theme='light'] {
+  --primary: #efefef;
+  --sidebar: #cacaca87;
+  --profile: #b3b3b3;
+  --buttons: #494f51;
+  --letter: #000000;
+  --items: #e1e1e1;
+  --buscadores: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +31,7 @@ html {
 }
 
 body {
-  background-color: #222222;
+  background-color: var(--primary);
 }
 
 .App {
@@ -26,22 +44,30 @@ body {
 /*MODO OSCURO (predeterminado) CLASES COLORES*/
 
 .colorItems {
-  background-color: #2b2b2b;
+  background-color: var(--items);
 }
 
 .colorBotonesUsuario {
-  background-color: #494f51;
-  color: white;
+  background-color: var(--buttons);
+  color: var(--letter);
+}
+
+.colorProfileSidebar {
+  background-color: var(--profile);
 }
 
 .colorPrincipal {
-  background-color: #222222;
-  color: white;
+  background-color: var(--primary);
+  color: var(--letter);
+}
+.colorPrincipal a,
+.colorPrincipal svg {
+  color: var(--letter);
 }
 
 .colorBuscadores {
-  background-color: #333333;
-  color: white;
+  background-color: var(--buscadores);
+  color: var(--letter);
   outline-style: none;
   border: 1px solid lightgrey;
 }
@@ -49,7 +75,7 @@ body {
 /*MODO CLARO CLASES COLORES*/
 
 .colorPrincipalClaro {
-  background-color: white;
+  background-color: var(--letter);
 }
 
 .colorItemsClaro {

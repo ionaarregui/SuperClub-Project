@@ -18,16 +18,18 @@ header > * {
 }
 
 .header-title {
-  color: white;
+  color: var(--letter);
+  display: flex;
+  align-items: center;
 }
 
 .header-title a {
   text-decoration: none;
-  color: white;
+  color: var(--letter);
 }
 
 .header-form {
-  background-color: #222;
+  /* background-color: #222; */
   position: relative;
   margin-right: 10px;
 }
@@ -78,7 +80,8 @@ header > * {
     top: 4px;
   }
 
-  .header-form input:focus, .header-form button:focus ~  input{
+  .header-form input:focus,
+  .header-form button:focus ~ input {
     width: 160px;
     padding-left: 8px;
   }
