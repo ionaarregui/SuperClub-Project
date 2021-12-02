@@ -3,7 +3,7 @@ import Content from '../Content/Content'
 import Header from '../Header/Header'
 import './MainArea.css'
 
-export default function MainArea({ handlerShowMenu, showMenu }) {
+export default function MainArea({ handlerShowMenu, showMenu, setOptionActive}) {
   const [search, setSearch] = useState('')
   const searchContext = createContext({ search, setSearch })
 
@@ -17,7 +17,7 @@ export default function MainArea({ handlerShowMenu, showMenu }) {
   return (
     <main className="mainarea" onClick={ocultarMenu}>
       <Header handlerShowMenu={handlerShowMenu} searchContext={searchContext} />
-      <Content searchContext={searchContext} />
+      <Content searchContext={searchContext} setOptionActive={setOptionActive}/>
     </main>
   )
 }

@@ -9,11 +9,11 @@ import StoresView from '../../Pages/Stores/StoresView/StoresView'
 import NewStore from '../../Pages/Stores/NewStore/NewStore'
 import './Content.css'
 
-const Content = ({ searchContext }) => {
+const Content = ({ searchContext, setOptionActive }) => {
   return (
     <div className="content">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home setOptionActive={setOptionActive} />} />
         <Route path="/products" element={<ProductsList searchContext={searchContext} />} />
         <Route path="/products/:id" element={<ProductView />} />
         <Route path="/products/new" element={<NewProduct />} />

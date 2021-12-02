@@ -5,7 +5,7 @@ import { getProductsList } from '../../Utils/ProductUtils'
 import { getStoresList } from '../../Utils/StoreUtils'
 import './Home.css'
 
-const Home = () => {
+const Home = ({setOptionActive}) => {
   let agregarProducto = useRef(null)
   let agregarTienda = useRef(null)
 
@@ -44,10 +44,10 @@ const Home = () => {
         </div>
         <div>
           <div className="blockButton">
-            <Link to="/products">Ver listado</Link>
+            <Link to="/products" onClick={()=>setOptionActive('/products')}>Ver listado</Link>
           </div>
           <div ref={agregarProducto} className="blockButton">
-            <Link to="/products/new">Agregar Producto</Link>
+            <Link to="/products/new" onClick={()=>setOptionActive('/products')}>Agregar Producto</Link>
           </div>
         </div>
       </div>
@@ -71,10 +71,10 @@ const Home = () => {
         </div>
         <div>
           <div className="blockButton">
-            <Link to="/stores">Ver listado</Link>
+            <Link to="/stores" onClick={()=>setOptionActive('/stores')}>Ver listado</Link>
           </div>
           <div onLoad={cambiarWidth} className="blockButton">
-            <Link to="/stores/new">Agregar Tienda</Link>
+            <Link to="/stores/new" onClick={()=>setOptionActive('/stores')}>Agregar Tienda</Link>
           </div>
         </div>
       </div>
