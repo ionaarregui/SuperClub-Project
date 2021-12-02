@@ -1,7 +1,7 @@
 import './Sidebar.css'
 import profileIcon from '../../Assets/perfil.png'
 import santanderLogo from '../../Assets/santanderLogo.svg'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import LinkOption from '../LinkOption/LinkOption'
 
@@ -59,7 +59,7 @@ const links = [
   },
 ]
 
-const Sidebar = ({ showMenu }) => {
+const Sidebar = ({ showMenu, optionActive, setOptionActive }) => {
   const [checked, setChecked] = useState(localStorage.getItem('theme') === 'dark' ? true : false)
   let showingMenu = showMenu ? 'abiertoMenu' : ''
   let switchBtn = checked ? '' : 'SwitchOn'
@@ -77,10 +77,6 @@ const Sidebar = ({ showMenu }) => {
   useEffect(() => {
     document.querySelector('html').setAttribute('data-theme', localStorage.getItem('theme'))
   }, [checked])
-
-  const location = useLocation()
-
-  const [optionActive, setOptionActive] = useState(location.pathname)
 
   return (
     <nav className={'navbar ' + showingMenu}>
@@ -102,7 +98,7 @@ const Sidebar = ({ showMenu }) => {
         </ul>
       </div>
       <div className="linkProfile colorProfileSidebar">
-        <Link to="/profile">
+        <Link to="/profile" onClick={()=>setOptionActive('/profile')}>
           <img src={profileIcon} alt="Imagen de perfil" />
           Olivia
         </Link>
