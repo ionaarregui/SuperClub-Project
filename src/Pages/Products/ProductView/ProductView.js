@@ -29,18 +29,13 @@ const ProductView = () => {
     setLoading(true)
     let producto = await getProduct(id)
     let tiendas = await getStoresList()
-    let storeProduct = setTimeout(
-      tiendas.find((t) => t._id === producto.store),
-      1000
-    )
     setTimeout(setLoading(false), 1000)
 
     setProduct(producto)
-    setStore(storeProduct)
+    setStore(tiendas.find((t) => t._id === producto.store))
     setStores(tiendas)
     setGallery(producto.gallery)
     setContador(producto.stock || 0)
-    console.log(producto.stock)
     nombre.current.value = producto.title || ''
     precio.current.value = producto.price || 0
     descripcion.current.value = producto.description || ''
@@ -183,14 +178,14 @@ const ProductView = () => {
           <div className="input-group">
             <label htmlFor="image">Imagen principal</label>
             <br />
-            <input className="colorBuscadores" type="text" ref={imagen} id="image" placeholder="Url de imagen..." />
+            <input className="colorBuscadores" type="url" ref={imagen} id="image" placeholder="Url de imagen..." />
           </div>
           <div className="input-group">
             <label htmlFor="image">Nueva imagen</label>
             <br />
             <input
               className="colorBuscadores"
-              type="text"
+              type="url"
               ref={galeria}
               id="image"
               placeholder="Url de imagen..."

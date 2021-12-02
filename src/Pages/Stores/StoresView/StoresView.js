@@ -62,22 +62,22 @@ const StoresView = () => {
           <div className="input-group">
             <label htmlFor="nombre">Nombre</label>
             <br />
-            <input className="colorBuscadores" required type="text" ref={name} id="nombre" />
+            <input className="colorBuscadores" required type="text" ref={name} id="nombre" placeholder="Nombre de tienda..." />
           </div>
           <div className="input-group">
             <label htmlFor="email">Email</label>
             <br />
-            <input className="colorBuscadores" required type="text" ref={email} id="email" />
+            <input className="colorBuscadores" required type="text" ref={email} id="email" placeholder="Email..." />
           </div>
           <div className="input-group">
             <label htmlFor="phone">Teléfono</label>
             <br />
-            <input className="colorBuscadores" type="phone" ref={phone} id="phone" />
+            <input className="colorBuscadores" type="phone" ref={phone} id="phone" placeholder="Telefono..." />
           </div>
           <div className="input-group">
             <label htmlFor="image">Logo</label>
             <br />
-            <input className="colorBuscadores" type="text" ref={logo} id="image" placeholder="Url de imagen..." />
+            <input className="colorBuscadores" type="url" ref={logo} id="image" placeholder="Url de imagen..." />
             <img src={logo} widht="45px" height="45px" alt="" />
           </div>
 

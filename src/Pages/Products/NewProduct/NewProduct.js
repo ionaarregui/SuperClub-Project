@@ -24,7 +24,7 @@ const NewProduct = () => {
   let image = useRef('')
   let tienda = useRef('')
   let galeria = useRef('')
-  let stock = useRef('')
+  let imagen = useRef('')
 
   useEffect(async () => {
     setLoading(true)
@@ -63,8 +63,8 @@ const NewProduct = () => {
       image: image.current.value,
       stock: contador,
       category: category.current.value,
-      store: '',
-      gallery: '',
+      store: tienda.current.value,
+      gallery: gallery,
       mostWanted: false,
     }
     postProduct(product)
@@ -131,19 +131,24 @@ const NewProduct = () => {
             <br />
             <p>Tienda</p>
             <br />
-            <select ref={tienda} className="colorBuscadores" ref={store} id="tienda" name="tienda" defaultValue="0" type="number" required>
+            <select ref={tienda} className="colorBuscadores" id="tienda" name="tienda" required>
               <option value="0" disabled>
                 -- Seleccione una tienda --
               </option>
               {stores &&
                 stores.map((t) => (
-                  <option value={t.name} key={t._id}>
+                  <option value={t._id} key={t._id}>
                     {t.name}
                   </option>
                 ))}
             </select>
             <br />
             <h3>Galería de imágenes</h3>
+            <div className="input-group">
+              <label htmlFor="image">Imagen principal</label>
+              <br />
+              <input className="colorBuscadores" type="url" ref={image} id="image" placeholder="Url de imagen..." />
+            </div>
             <div className="input-group">
               <p>Nueva imagen</p>
               <br />
@@ -180,7 +185,5 @@ const NewProduct = () => {
     </>
   )
 }
-
-
 
 export default NewProduct

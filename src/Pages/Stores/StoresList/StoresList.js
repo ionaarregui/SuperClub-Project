@@ -34,7 +34,9 @@ const StoresList = ({ searchContext }) => {
           .map((store, i, i2, i3, i4, i5, i6, i7) => {
             return (
               <li key={i} className="tiendas colorItems">
-                <img key={i2} src={store.logo || notImage} alt="Foto tienda" className="imagenesTiendas"></img>
+                <div className="imagenesProductos">
+                  <img key={i2} src={store.logo || notImage} alt="Foto tienda" className="imagenesTiendas"></img>
+                </div>
                 <div key={i3} className="listaStores">
                   <h3 key={i4}>{store.name}</h3>
                   <h4 key={i5}>#{store._id}</h4>
