@@ -47,7 +47,7 @@
   transition: 0.3s width;
 }
 
-.optionsLink:focus .options::after {
+.optionActive::after {
   width: 100%;
 }
 
