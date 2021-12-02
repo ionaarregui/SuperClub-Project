@@ -12,6 +12,7 @@ input[type='number'] {
 /* CLASES GLOBALES DESDE NEW PRODUCT */
 .form-container {
   padding: 20px;
+  font-size: 20px;
 }
 .form-container h3 {
   margin: 15px 0px;
