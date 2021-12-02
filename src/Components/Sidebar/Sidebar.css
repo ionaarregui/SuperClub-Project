@@ -90,9 +90,8 @@
   width: 30px;
   border-radius: 18px;
   height: 18px;
-  background-color: var(--letter);
-  border: 1px solid rgba(0, 0, 0, 0.9);
-  border-left: none;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 9, 0.3);
   display: flex;
   transition: 0.5s background-color, 0.5s border;
   align-items: center;
@@ -108,12 +107,11 @@
 
 .botonSwitchOn {
   background-color: black;
-  border: 1px solid var(--letter);
-  border-right: none;
+  border: 1px solid white;
 }
 
 .opcionSwitchOn {
-  background-color: var(--letter);
+  background-color: white;
   border: 1px solid rgba(0, 0, 9, 0.3);
   transform: translateX(12px);
 }

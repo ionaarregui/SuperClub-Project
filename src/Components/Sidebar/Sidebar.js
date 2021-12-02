@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 const Sidebar = ({ showMenu }) => {
-  let showingMenu = showMenu ? 'abiertoMenu' : ''
   const [checked, setChecked] = useState(localStorage.getItem('theme') === 'dark' ? true : false)
+  let showingMenu = showMenu ? 'abiertoMenu' : ''
+  let switchBtn = checked ? '' : 'SwitchOn'
 
   const toggleThemeChange = () => {
     if (checked === false) {
@@ -17,6 +18,7 @@ const Sidebar = ({ showMenu }) => {
       setChecked(false)
     }
   }
+
   useEffect(() => {
     document.getElementsByTagName('HTML')[0].setAttribute('data-theme', localStorage.getItem('theme'))
   }, [checked])
@@ -84,8 +86,8 @@ const Sidebar = ({ showMenu }) => {
           Olivia
         </Link>
         <div className="changeMode" onClick={() => toggleThemeChange()}>
-          <div id="botonSwitch" className="botonSwitch">
-            <div id="opcionSwitch" className="opcionSwitch"></div>
+          <div id="botonSwitch" className={'botonSwitch boton' + switchBtn}>
+            <div id="opcionSwitch" className={'opcionSwitch opcion' + switchBtn}></div>
           </div>
           Cambiar modo
         </div>
