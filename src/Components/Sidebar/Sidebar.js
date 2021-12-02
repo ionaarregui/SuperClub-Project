@@ -2,7 +2,7 @@ import './Sidebar.css'
 import profileIcon from '../../Assets/perfil.png'
 import santanderLogo from '../../Assets/santanderLogo.svg'
 import { Link, useLocation } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import LinkOption from '../LinkOption/LinkOption'
 
 const links = [
@@ -60,7 +60,23 @@ const links = [
 ]
 
 const Sidebar = ({ showMenu }) => {
+  const [checked, setChecked] = useState(localStorage.getItem('theme') === 'dark' ? true : false)
   let showingMenu = showMenu ? 'abiertoMenu' : ''
+  let switchBtn = checked ? '' : 'SwitchOn'
+
+  const toggleThemeChange = () => {
+    if (checked === false) {
+      localStorage.setItem('theme', 'dark')
+      setChecked(true)
+    } else {
+      localStorage.setItem('theme', 'light')
+      setChecked(false)
+    }
+  }
+
+  useEffect(() => {
+    document.querySelector('html').setAttribute('data-theme', localStorage.getItem('theme'))
+  }, [checked])
 
   const location = useLocation()
 
@@ -85,14 +101,14 @@ const Sidebar = ({ showMenu }) => {
           ))}
         </ul>
       </div>
-      <div className="linkProfile colorBotonesUsuario">
+      <div className="linkProfile colorProfileSidebar">
         <Link to="/profile">
           <img src={profileIcon} alt="Imagen de perfil" />
           Olivia
         </Link>
-        <div className="changeMode">
-          <div id="botonSwitch" className="botonSwitch">
-            <div id="opcionSwitch" className="opcionSwitch"></div>
+        <div className="changeMode" onClick={toggleThemeChange}>
+          <div id="botonSwitch" className={'botonSwitch boton' + switchBtn}>
+            <div id="opcionSwitch" className={'opcionSwitch opcion' + switchBtn}></div>
           </div>
           Cambiar modo
         </div>

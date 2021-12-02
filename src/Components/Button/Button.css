@@ -4,7 +4,7 @@
   border: 0px;
   transition: all 250ms;
   cursor: pointer;
-  color: white;
+  color: var(--buttonText);
 }
 
 .btn:hover {
