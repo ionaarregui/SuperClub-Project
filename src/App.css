@@ -1,4 +1,4 @@
-:root {
+html {
   --primary: #222222;
   --buttons: #494f51;
   --profile: #494f51;
@@ -9,7 +9,7 @@
   --sidebar: rgba(0, 0, 0, 0.8);
 }
 
-[data-theme='light'] :root {
+html[data-theme='light'] {
   --primary: #efefef;
   --sidebar: #cacaca87;
   --profile: #b3b3b3;
