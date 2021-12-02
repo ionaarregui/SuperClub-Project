@@ -41,7 +41,7 @@ const StoresView = () => {
 
   return (
     <>
-      <div className="product">
+      <div className="product colorPrincipal">
         <div className="product-img">
           <img src={store.logo ? store.logo : notImage} alt={store.name} />
         </div>
@@ -49,28 +49,28 @@ const StoresView = () => {
           <h3>{store.name}</h3>
         </div>
       </div>
-      <div className="form-container">
+      <div className="form-container colorPrincipal">
         <h3>Información</h3>
         <form onSubmit={sendForm}>
           <div className="input-group">
             <label htmlFor="nombre">Nombre</label>
             <br />
-            <input required type="text" ref={name} id="nombre" />
+            <input className="colorBuscadores" required type="text" ref={name} id="nombre" />
           </div>
           <div className="input-group">
             <label htmlFor="email">Email</label>
             <br />
-            <input required type="text" ref={email} id="email" />
+            <input className="colorBuscadores" required type="text" ref={email} id="email" />
           </div>
           <div className="input-group">
             <label htmlFor="phone">Teléfono</label>
             <br />
-            <input type="phone" ref={phone} id="phone" />
+            <input className="colorBuscadores" type="phone" ref={phone} id="phone" />
           </div>
           <div className="input-group">
             <label htmlFor="image">Logo</label>
             <br />
-            <input type="text" ref={logo} id="image" placeholder="Url de imagen..." />
+            <input className="colorBuscadores" type="text" ref={logo} id="image" placeholder="Url de imagen..." />
             <img src={logo} widht="45px" height="45px" alt="" />
           </div>
 
