@@ -1,15 +1,15 @@
-html {
+:root {
   --primary: #222222;
   --buttons: #494f51;
   --profile: #494f51;
   --buttonText: #ffff;
   --letter: #ffff;
-  --items: #777777;
+  --items: rgb(245, 245, 245, 0.05);
   --buscadores: #333333;
   --sidebar: rgba(0, 0, 0, 0.8);
 }
 
-html[data-theme='light'] {
+[data-theme='light'] :root {
   --primary: #efefef;
   --sidebar: #cacaca87;
   --profile: #b3b3b3;

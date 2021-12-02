@@ -43,12 +43,19 @@
   height: 100%;
   border-radius: 10px;
   width: 0;
-  background-color: rgb(245, 245, 245, 0.2);
   transition: 0.3s width;
 }
 
 .optionActive::after {
   width: 100%;
+}
+
+[data-theme=dark] .options::after {
+  background-color: rgba(245, 245, 245, 0.2);
+}
+
+[data-theme=light] .options::after {
+  background-color: rgba(73, 79, 81, 0.2);;
 }
 
 .linkProfile {

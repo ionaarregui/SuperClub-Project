@@ -160,7 +160,7 @@ const NewProduct = () => {
                 gallery &&
                 gallery.map((item, i) => {
                   return (
-                    <div className="product-galleryItem" key={i}>
+                    <div className="product-galleryItem colorItems" key={i}>
                       <div className="product-galleryItem-img">
                         <div className="product-img">
                           <img src={item} alt={item} />
@@ -180,5 +180,7 @@ const NewProduct = () => {
     </>
   )
 }
+
+
 
 export default NewProduct
