@@ -95,7 +95,7 @@
   font-size: 12px;
 }
 .product-galleryItem p {
-  position: static;
+  position: static !important;
   max-width: 80%;
 }
 .product-galleryItem-img {

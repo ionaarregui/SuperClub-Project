@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import Button from '../../../Components/Button/Button'
 import { getProduct, putProduct } from '../../../Utils/ProductUtils'
 import { getStoresList } from '../../../Utils/StoreUtils'
@@ -7,6 +7,7 @@ import './ProductView.css'
 import notImage from '../../../Assets/image-not-found.png'
 
 const ProductView = () => {
+  const navegate = useNavigate()
   const [product, setProduct] = useState([])
   const [stores, setStores] = useState([])
   const [store, setStore] = useState([])
@@ -69,7 +70,9 @@ const ProductView = () => {
       gallery: gallery,
       mostWanted: false,
     }
-    putProduct(product._id, productoEdit).catch((err) => console.error('Error santanderístico al cargar el producto'))
+    putProduct(product._id, productoEdit)
+      .then(navegate('/products'))
+      .catch((err) => console.error('Error santanderístico al cargar el producto'))
   }
 
   const prevenirEnvio = (e) => {
@@ -145,7 +148,7 @@ const ProductView = () => {
               -
             </button>
             <input className="colorBuscadores" id="stock" value={contador} name="stock" type="number" defaultValue="1" required></input>
-            <button type="button" onClick={handleSuma} className="operador colorBuscadores">
+            <button type="button" onMouseDown={handleSuma} className="operador colorBuscadores">
               +
             </button>
           </div>
