@@ -2,7 +2,6 @@
   display: flex;
   width: 90%;
   padding: 20px;
-  margin: 25px 0;
   color: #ffff;
   align-items: center;
 }
@@ -95,7 +94,7 @@
   font-size: 12px;
 }
 .product-galleryItem p {
-  position: static;
+  position: static !important;
   max-width: 80%;
 }
 .product-galleryItem-img {
