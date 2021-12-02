@@ -24,6 +24,13 @@ input[type='number'] {
   position: relative;
   top: 16px;
 }
+.form-container p {
+  white-space: normal;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+
 .form-container input,
 .form-container textarea,
 .form-container select {
